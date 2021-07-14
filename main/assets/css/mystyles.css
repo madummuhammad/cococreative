@@ -1,0 +1,284 @@
+:root {
+	--blue: #007bff;
+	--indigo: #6610f2;
+	--purple: #6f42c1;
+	--pink: #e83e8c;
+	--red: #dc3545;
+	--orange: #fd7e14;
+	--yellow: #fed136;
+	--green: #28a745;
+	--teal: #20c997;
+	--cyan: #17a2b8;
+	--white: #fff;
+	--gray: #6c757d;
+	--gray-dark: #343a40;
+	--primary: #fed136;
+	--secondary: #6c757d;
+	--success: #28a745;
+	--info: #17a2b8;
+	--warning: #fed136;
+	--danger: #dc3545;
+	--light: #f8f9fa;
+	--dark: #343a40;
+	--breakpoint-xs: 0;
+	--breakpoint-sm: 576px;
+	--breakpoint-md: 768px;
+	--breakpoint-lg: 992px;
+	--breakpoint-xl: 1200px;
+	--font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	--font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+.icon-e-commerce{
+	width: 5.5rem;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 5px;
+}
+/*Trust*/
+.trust-icon{
+	color: white;
+	background-color: white;
+}
+.trust-icon:hover{
+	color: #17a2b8;
+	transition-duration: 1s;
+}
+.trust-icon:hover > .trust-text{
+	color: white;
+	transition-duration: 1s;
+}
+.trust-text{
+	color: #17a2b8;
+}
+/*End Of Trust*/
+
+/*Whatsapp Icon*/
+.whatsapp-icon{
+	position: fixed;
+	right: 20px;
+	bottom: 0;
+	font-size: 70px;
+}
+/*End Of Whatsapp Icon*/
+
+.scroll-icon{
+	position: fixed;
+	left: 20px;
+	bottom: 20px;
+	font-size: 50px;
+	color: #8a867b;
+	cursor: pointer;
+}
+.nav-brand{
+	width: 70px;
+	height: 70px;
+}
+
+.text-link{
+	color: white;
+}
+.text-link:hover{
+	text-decoration: none;
+	color: cyan;
+	transition-duration: 1s;
+}
+.projects-section {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+.projects-section .featured-text {
+	padding: 2rem;
+}
+@media (min-width: 992px) {
+	.projects-section .featured-text {
+		padding: 0 0 0 2rem;
+		border-left: 0.5rem solid #64a19d;
+	}
+}
+.projects-section .project-text {
+	padding: 3rem;
+	font-size: 90%;
+}
+@media (min-width: 992px) {
+	.projects-section .project-text {
+		padding: 5rem;
+	}
+	.projects-section .project-text hr {
+		border-color: #64a19d;
+		border-width: 0.25rem;
+		width: 30%;
+	}
+}
+.no-gutters {
+	margin-right: 0;
+	margin-left: 0;
+}
+.no-gutters > .col,
+.no-gutters > [class*=col-] {
+	padding-right: 0;
+	padding-left: 0;
+}
+.opacity-0 {
+	opacity:0!important;
+}
+.opacity-1 {
+	opacity:0.2!important;
+}
+.opacity-2 {
+	opacity:0.4!important;
+}
+.opacity-3 {
+	opacity:0.6!important;
+}
+.opacity-4 {
+	opacity:.8!important;
+}
+.opacity-5 {
+	opacity:1!important;
+}
+/* Maybe even support hover opacity shifts */
+.opacity-0h5 {
+	opacity:0!important;
+	transition: opacity .25s ease-in-out!important;
+	-moz-transition: opacity .25s ease-in-out!important;
+	-webkit-transition: opacity .25s ease-in-out!important;
+}
+.opacity-0h5:hover {
+	opacity:1!important;
+}
+/*About*/
+.about-image{
+	padding-top: 10.5rem;
+	padding-bottom: 6rem;
+	text-align: left;
+	color: #fff;
+	background-image: url("../assets/img/about1.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: 1s;
+}
+.about-image:hover > .about-commit-text{
+	opacity: 0;
+	transition: 1s;
+}
+.about-image:hover > .about-commit-text2{
+	opacity: 0.9;
+	transition: 1s;
+}
+.about-commit-img{
+	position: relative;
+	z-index: 1;
+	top: 0px;
+}
+.about-text{
+	width: 100%;
+	background-color:  rgb(0,0,0,0.4);
+	opacity: 0.5;
+	margin: auto;
+}
+.about-commit-text2{
+	opacity: 0;
+	position: absolute;
+	transition: 1s;
+}
+.about-commit-text{
+	opacity: 1;
+	position: absolute;
+	transition: 1s;
+}
+/*End Of About*/
+.preloader {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background-color: #fff;
+}
+.preloader .loading {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	font: 14px arial;
+}
+/*.chart-item:hover{
+  color: #495057;
+  background-color: #fff;
+  border-color: #dee2e6 #dee2e6 #fff;
+  }*/
+/*.about-commit-text{
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	text-align: center;
+	top: 200px;
+	margin: auto;
+	color: #fff;
+	font-weight: bold;
+}
+.about-commit-text2{
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	text-align: center;
+	top: 200px;
+	margin: auto;
+	color: #fff;
+	display: none;
+}*/
+.developed{
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	background-color: black;
+	position: fixed;
+	opacity: 0.5;
+	z-index: 1;
+	padding-top: auto;
+}
+.text-developed{
+	height: 100%;
+	width: 100%;
+	padding-top: 20%;
+	text-align: center;
+	position: fixed;
+	z-index: 2;
+	color: black;
+	margin-left: auto;
+}
+
+.keterangan-produk{
+	white-space: pre-wrap;
+}
+
+.tombol-kembali{
+	position: fixed;
+	left: 20px;
+	top: 100px;
+	font-size: 20px;
+	cursor: pointer;
+}
+.tombol-kembali a{
+	color: red;
+	font-weight: bold;
+}
+.carousel-edit{
+	position: absolute;
+	right: 60px;
+	bottom: 0;
+}
+.gambar-edit-carousel{
+	width: 100%;
+}

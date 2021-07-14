@@ -1,0 +1,15 @@
+.keterangan-produk-tabel{
+  width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.gambar-tabel{
+	width: 100px;
+}
+.modal-keterangan{
+	white-space: pre-line;
+}
+.centang{
+	font-size: 25px;
+}
