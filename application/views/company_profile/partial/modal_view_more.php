@@ -13,7 +13,7 @@
 					<div class="row">
 						<div class="card-group w-100">
 							<div class="card">
-								<img class="card-img-top" src="http://localhost/admin_cococreative/assets/assets/img/upload/variasi_produk/<?php echo $value['gambar_variasi'] ?>" alt="">
+								<img class="card-img-top" src="<?php echo base_url('main') ?>/assets/assets/img/upload/variasi_produk/<?php echo $value['gambar_variasi'] ?>" alt="">
 							</div>
 							<div class="card">
 								<div class="card-body">
