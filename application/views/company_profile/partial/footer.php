@@ -18,7 +18,7 @@
                     <!--                             <a href="#" class="text-link">
                     Contact Us </a> -->
                     <a href="https://www.tokopedia.com/cococreative"><img class="icon-e-commerce" src="<?php echo base_url('assets/assets/img/logos/logo_tokopedia.svg') ?>"></a>
-                    <a href="https://shopee.co.id/firmanyusuf13"><img class="icon-e-commerce" src="<?php echo base_url('assets/assets/img/logos/logo_shopee.svg') ?>"></a>
+                    <a href="https://shopee.co.id/cococreative"><img class="icon-e-commerce" src="<?php echo base_url('assets/assets/img/logos/logo_shopee.svg') ?>"></a>
                 </div>
             </div>
         </div>
@@ -44,7 +44,7 @@
                     <!--                             <a href="#" class="text-link">
                     Contact Us </a> -->
                     <a href="https://www.tokopedia.com/cococreative"><img class="icon-e-commerce" src="<?php echo base_url('assets/assets/img/logos/logo_tokopedia.svg') ?>"></a>
-                    <a href="https://shopee.co.id/firmanyusuf13"><img class="icon-e-commerce" src="<?php echo base_url('assets/assets/img/logos/logo_shopee.svg') ?>"></a>
+                    <a href="https://shopee.co.id/cococreative"><img class="icon-e-commerce" src="<?php echo base_url('assets/assets/img/logos/logo_shopee.svg') ?>"></a>
                 </div>
             </div>
         </div>
@@ -60,9 +60,9 @@
             <div class="col-lg-4 text-lg-left text-dark">Copyright © <?php echo SITE_NAME ?> 2020</div>
             <div class="col-lg-4 my-3 my-lg-0">
                 <!--                         <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a> -->
-                <a class="btn btn-dark btn-social mx-2" href="https://web.facebook.com/coc0creative"><i class="fab fa-facebook-f"></i></a>
+                <a class="btn btn-dark btn-social mx-2" href="https://web.facebook.com/cococreative.id"><i class="fab fa-facebook-f"></i></a>
                 <a class="btn btn-dark btn-social mx-2" href="https://www.linkedin.com/in/firman-yusuf-989a9a203/"><i class="fab fa-linkedin-in"></i></a>
-                <a class="btn btn-dark btn-social mx-2" href="https://www.instagram.com/cococreative_/"><i class="fab fa-instagram"></i></a>
+                <a class="btn btn-dark btn-social mx-2" href="https://www.instagram.com/cococreative.id/"><i class="fab fa-instagram"></i></a>
                 <a class="btn btn-dark btn-social mx-2" href=""><i class="fas fa-envelope"></i></a>
             </div>
             <div class="col-lg-4 text-lg-right">
