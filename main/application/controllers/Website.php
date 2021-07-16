@@ -122,6 +122,8 @@ class Website extends CI_Controller {
 				</div>');
 			$this->session->mark_as_temp('message',1);
 			redirect('error');
+		} else {
+			$this->M_Website->edit_link_video();
 		}
 	}
 }

@@ -635,10 +635,15 @@ class M_Website extends CI_Model {
 
 	public function edit_link_video()
 	{
-		$url="https://www.youtube.com/watch?v=lM0TuGmhdPE&t=15s";
+		$url=$this->input->post('link');
 		$link=str_replace('http://www.youtube.com/watch?v=','', $url);
 		$link=str_replace('https://www.youtube.com/watch?v=', '', $link);
-		$data=$link;
-		return $data;
+		
+		$data=[
+			'link'=>$link
+		];
+		$this->db->where('id_link',1);
+		$this->db->update('link_video',$data);
+		redirect('website');
 	}
 }

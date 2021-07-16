@@ -71,20 +71,20 @@
 </div>
 </section>
 <section class="page-section">
-    <div class="container-fluid">
-       <div class="row">
-        <div class="col-sm-12">
-            <h1 class="text-center">OUR VIDEO</h1>
-        </div>
-        <div class="col-sm-12">
-            <div class="mx-auto text-center m-5">
-                <object class="col-lg-7 col-sm-12" height="430" data="http://www.youtube.com/v/<?php echo $this->M_Website->youtube() ?>" type="application/x-shockwave-flash">
-                    <param name="src" value="http://www.youtube.com/v/<?php echo $this->M_Website->youtube() ?>" />
-                </object>
-            </div>
-        </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12">
+        <h1 class="text-center">OUR VIDEO</h1>
     </div>
-</div> 
+    <div class="col-sm-12">
+        <div class="mx-auto text-center m-5">
+          <object class="col-lg-7 col-sm-12" height="430" data="http://www.youtube.com/v/<?php echo $this->M_Website->tampil_link()['link'] ?>" type="application/x-shockwave-flash">
+            <param name="src" value="http://www.youtube.com/v/<?php echo $this->M_Website->tampil_link()['link'] ?>" />
+        </object>
+    </div>
+</div>
+</div>
+</div>
 </section>
 
 
