@@ -70,8 +70,26 @@
     <?php endforeach ?>
 </div>
 </section>
+<section class="page-section">
+    <div class="container-fluid">
+       <div class="row">
+        <div class="col-sm-12">
+            <h1 class="text-center">OUR VIDEO</h1>
+        </div>
+        <div class="col-sm-12">
+            <div class="mx-auto text-center m-5">
+                <object class="col-lg-7 col-sm-12" height="430" data="http://www.youtube.com/v/<?php echo $this->M_Website->youtube() ?>" type="application/x-shockwave-flash">
+                    <param name="src" value="http://www.youtube.com/v/<?php echo $this->M_Website->youtube() ?>" />
+                </object>
+            </div>
+        </div>
+    </div>
+</div> 
+</section>
+
+
 <!-- End Of My Product -->
-<section class="projects-section bg-secondary" id="projects">
+<section class="projects-section testimonial-bg" id="projects">
     <div class="container-fluid">
         <div class="container-fluid">
             <div class="row justify-content-center no-gutters mt-2">
@@ -83,7 +101,7 @@
                     </ol>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <div class="row justify-content-center no-gutters m-4">
+                            <div class="row justify-content-center no-gutters mt-2">
                                 <div class="col-lg-4">
                                     <img class="img-fluid d-block w-100" src="<?php echo base_url('assets/assets/img/default.png') ?>">
                                 </div>

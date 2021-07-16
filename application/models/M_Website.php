@@ -60,4 +60,12 @@ class M_Website extends CI_Model {
 		
 		return $result;
 	}
+	public function Youtube()
+	{
+		$url="https://www.youtube.com/watch?v=lM0TuGmhdPE&t=15s";
+		$link=str_replace('http://www.youtube.com/watch?v=','', $url);
+		$link=str_replace('https://www.youtube.com/watch?v=', '', $link);
+		$data=$link;
+		return $data;
+	}
 }
