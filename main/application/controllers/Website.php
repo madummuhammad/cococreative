@@ -113,4 +113,15 @@ class Website extends CI_Controller {
 	{
 		$this->M_Website->edit_about();
 	}
+	public function edit_link_video()
+	{
+		if (empty($this->input->post('link')))
+		{
+			$this->session->set_flashdata('message','<div class="alert alert-danger" role="alert">
+				Nama, Email dan Hak Akses Tidak Boleh Kosong. Email tidak boleh sama dengan yang ada!!
+				</div>');
+			$this->session->mark_as_temp('message',1);
+			redirect('error');
+		}
+	}
 }

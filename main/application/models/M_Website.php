@@ -626,4 +626,19 @@ class M_Website extends CI_Model {
 			'rules' => 'required']
 		];
 	}
+
+	public function tampil_link()
+	{
+		$result=$this->db->get('link_video')->row_array();
+		return $result;
+	}
+
+	public function edit_link_video()
+	{
+		$url="https://www.youtube.com/watch?v=lM0TuGmhdPE&t=15s";
+		$link=str_replace('http://www.youtube.com/watch?v=','', $url);
+		$link=str_replace('https://www.youtube.com/watch?v=', '', $link);
+		$data=$link;
+		return $data;
+	}
 }
