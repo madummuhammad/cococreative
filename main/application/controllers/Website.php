@@ -15,6 +15,7 @@ class Website extends CI_Controller {
 		$data['desproduk']=$this->M_Website->tampil_desproduk();
 		$data['top_img']=$this->M_Website->tampil_top_img(1);
 		$data['jenis_produk']=$this->M_Produk->tampil_jenis_produk();
+		$data['testimonial']=$this->M_Website->tampil_testimonial();
 		$this->load->view('tampilan_website/partial/header');
 		$this->load->view('tampilan_website/partial/mainNav');
 		$this->load->view('tampilan_website/v_home',$data);

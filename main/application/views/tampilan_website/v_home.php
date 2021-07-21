@@ -173,79 +173,57 @@
       <div class="row justify-content-center no-gutters mt-2">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
           <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            <?php foreach ($testimonial as $row => $value): ?>
+              <li data-target="#carouselExampleIndicators" data-slide-to="<?php echo $row ?>" class="<?php if ($row==0): ?>
+              <?php echo 'active' ?>
+              <?php endif ?>"></li>
+            <?php endforeach ?>
           </ol>
           <div class="carousel-inner">
-            <div class="carousel-item active">
-              <div class="row justify-content-center no-gutters mt-2">
-                <div class="col-lg-4">
-                  <img class="img-fluid d-block w-100" src="<?php echo base_url('assets/assets/img/default.png') ?>">
+            <?php foreach ($testimonial as $row => $value): ?>
+              <div class="carousel-item <?php if ($row==0): ?>
+              <?php echo 'active' ?>
+              <?php endif ?>">
+              <div class="row justify-content-center no-gutters m-5 p-5">
+                <div class="col-lg-7">
+                  <div class="bg-white text-center h-100 project">
+                    <div class="d-flex h-100">
+                      <div class="project-text w-100 my-auto text-center">
+                        <p class="mb-0 text-dark-50 text-center"><span class="display-4 font-weight-bold"><img class="img-fluid d-block w-100" src="<?php echo base_url('assets/assets/img/upload/website/') ?><?php echo $value['gambar'] ?>"></span></p>
+
+                      </div>
+                    </div>
+                  </div>
+
                 </div>
-                <div class="col-lg-6 order-lg-first">
+                <div class="col-lg-5 order-lg-first">
                   <div class="bg-white text-center h-100 project">
                     <div class="d-flex h-100">
                       <div class="project-text w-100 my-auto text-center">
                         <h4 class="text-dark">TESTIMONIAL</h4>
                         <hr class="w-100">
-                        <p class="mb-0 text-dark-50 text-center"><span class="display-4 font-weight-bold">"</span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos molestias minima, exercitationem necessitatibus id veritatis excepturi eum repellendus nemo dicta, facilis odio voluptates maxime aperiam. Repudiandae iure libero, sapiente at.</p>
+                        <p class="mb-0 text-dark-50 text-center"><span class="display-4 font-weight-bold">"</span><?php echo $value['isi'] ?></p>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="carousel-item">
-              <div class="row justify-content-center no-gutters mt-2">
-                <div class="col-lg-4">
-                  <img class="img-fluid d-block w-100" src="<?php echo base_url('assets/assets/img/default.png') ?>">
-                </div>
-                <div class="col-lg-6 order-lg-first">
-                  <div class="bg-white text-center h-100 project">
-                    <div class="d-flex h-100">
-                      <div class="project-text w-100 my-auto text-center">
-                        <h4 class="text-dark">TESTIMONIAL</h4>
-                        <hr class="w-100">
-                        <p class="mb-0 text-dark-50 text-center"><span class="display-4 font-weight-bold">"</span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos molestias minima, exercitationem necessitatibus id veritatis excepturi eum repellendus nemo dicta, facilis odio voluptates maxime aperiam. Repudiandae iure libero, sapiente at.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="row justify-content-center no-gutters mt-2">
-                <div class="col-lg-4">
-                  <img class="img-fluid d-block w-100" src="<?php echo base_url('assets/assets/img/default.png') ?>">
-                </div>
-                <div class="col-lg-6 order-lg-first">
-                  <div class="bg-white text-center h-100 project">
-                    <div class="d-flex h-100">
-                      <div class="project-text w-100 my-auto text-center">
-                        <h4 class="text-dark">TESTIMONIAL</h4>
-                        <hr class="w-100">
-                        <p class="mb-0 text-dark-50 text-center"><span class="display-4 font-weight-bold">"</span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos molestias minima, exercitationem necessitatibus id veritatis excepturi eum repellendus nemo dicta, facilis odio voluptates maxime aperiam. Repudiandae iure libero, sapiente at.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon bg-dark" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span class="carousel-control-next-icon bg-dark" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
+          <?php endforeach ?>
         </div>
-        <!--                </div> -->
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon bg-dark" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon bg-dark" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
       </div>
+      <!--                </div> -->
     </div>
   </div>
+</div>
 </section>
 
 <!-- Our Doing -->
