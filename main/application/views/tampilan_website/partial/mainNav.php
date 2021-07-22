@@ -20,7 +20,7 @@
 
                         <li class="nav-item"><a class="nav-link js-scroll-trigger <?php if ($this->uri->segment(2)=='testimonial'): ?>
                         <?php echo 'active' ?>
-                        <?php endif ?>" href="<?php echo base_url('website/testimonial') ?>">Testimoni</a></li>
+                        <?php endif ?>" href="<?php echo base_url('website/testimonial') ?>">Berita</a></li>
 
                         <li class="nav-item"><a class="nav-link js-scroll-trigger <?php if ($this->uri->segment(2)=='produk'): ?>
                         <?php echo 'active' ?>
@@ -103,7 +103,7 @@
 
                                 <li class="nav-item"><a class="nav-link js-scroll-trigger <?php if ($this->uri->segment(2)=='testimonial'): ?>
                                 <?php echo 'active' ?>
-                                <?php endif ?>" href="<?php echo base_url('website/testimonial') ?>">Testimonial</a></li>
+                                <?php endif ?>" href="<?php echo base_url('website/testimonial') ?>">News</a></li>
 
                                 <li class="nav-item"><a class="nav-link js-scroll-trigger <?php if ($this->uri->segment(2)=='produk'): ?>
                                 <?php echo 'active' ?>
