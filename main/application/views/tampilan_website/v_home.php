@@ -208,6 +208,33 @@
                   </div>
                 </div>
               </div>
+              <div class="btn-group carousel-edit" role="group" aria-label="Basic example">
+                <!-- Hapus -->
+                <a type="button" class="btn btn-danger" data-toggle="modal" data-target="#hapustestimoni<?php echo $value['id_testimoni'] ?>"><i class="fas fa-trash"></i></a>
+                <div class="modal fade text-dark" id="hapustestimoni<?php echo $value['id_testimoni'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel"><span class="text-danger">Yakin mau menghapus:  </span><?php echo $value['isi'] ?>?</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">×</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">Pilih Tombol "Hapus" untuk menghapus.</div>
+                      <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                        <a class="btn btn-primary" href="<?php echo base_url('website/hapus_testimoni/'.$value['id_testimoni']) ?>">Hapus</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- End Of Hapus -->
+
+                <!-- Edit -->
+                <a type="button" class="btn btn-info" data-toggle="modal" data-target="#edittestimoni<?php echo $value['id_testimoni'] ?>"><i class="fas fa-edit"></i></a>
+
+              </div>
             </div>
           <?php endforeach ?>
         </div>
@@ -223,6 +250,12 @@
       <!--                </div> -->
     </div>
   </div>
+
+</div>
+<div class="container">
+  <!-- Tambah -->
+  <a type="button" class="btn btn-primary mt-3 w-100" data-toggle="modal" data-target="#tambahtestimoni">Tambah Testimoni <i class="fas fa-plus"></i></a>
+  <!-- End Of Tambah -->
 </div>
 </section>
 

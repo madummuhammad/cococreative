@@ -75,6 +75,5 @@ class M_Website extends CI_Model {
 			$result=$this->db->get('testimonial')->result_array();
 		}
 		return $result;
-		
 	}
 }

@@ -401,27 +401,77 @@
 <!-- End Of Edit -->
 
 <!-- Edit Link Video -->
-	<div class="modal fade" id="editlinkvideo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog modal-md" role="document">
+<div class="modal fade" id="editlinkvideo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-md" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<?php if (get_cookie('lang_is')=='in'): ?>
+					<h5 class="modal-title text-dark" id="exampleModalLabel">Edit Link Video</h5>
+				<?php else: ?>
+					<h5 class="modal-title text-dark" id="exampleModalLabel">Edit Link Video</h5>
+				<?php endif ?>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<form method="POST" action="<?php echo base_url('website/edit_link_video') ?>" enctype="multipart/form-data">
+				<div class="modal-body">
+					<div class="row">
+						<div class="col">
+							<div class="form-group text-dark">
+								<div class="form-group mt-2">
+									<label for="exampleFormControlTextarea1">Masukan Link</label>
+									<input class="form-control" placeholder="Masukan Link" name="link">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button type="submit" class="btn btn-primary" clicked>Save changes</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<!-- End of Trust -->
+
+<!-- Tambah Testimoni-->
+<?php foreach ($testimonial as $row => $value): ?>
+	<div class="modal fade" id="tambahtestimoni" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-xl" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<?php if (get_cookie('lang_is')=='in'): ?>
-						<h5 class="modal-title text-dark" id="exampleModalLabel">Edit Link Video</h5>
-					<?php else: ?>
-						<h5 class="modal-title text-dark" id="exampleModalLabel">Edit Link Video</h5>
-					<?php endif ?>
+					<h5 class="modal-title text-dark" id="exampleModalLabel">Tambah Testimoni</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
-				<form method="POST" action="<?php echo base_url('website/edit_link_video') ?>" enctype="multipart/form-data">
+				<form method="POST" action="<?php echo base_url('website/tambah_testimoni') ?>" enctype="multipart/form-data">
 					<div class="modal-body">
 						<div class="row">
+							<div class="col-sm-12">
+								<label for="exampleFormControlFile1" class="text-center w-100">Masukan Gambar Baru</label>
+								<input type="file" class="form-control-file" id="exampleFormControlFile1" name="gambar">
+								<hr>
+							</div>
 							<div class="col">
 								<div class="form-group text-dark">
+									<h5>Bahasa Indonesia</h5>
 									<div class="form-group mt-2">
-										<label for="exampleFormControlTextarea1">Masukan Link</label>
-										<input class="form-control" placeholder="Masukan Link" name="link">
+										<label for="exampleFormControlTextarea1">Isi Testimoni</label>
+										<textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Masukan Judul" name="isitestimoni"></textarea>
+									</div>
+								</div>
+							</div>
+							<div class="col">
+								<div class="form-group text-dark">
+									<h5>Bahasa Inggris</h5>
+									<div class="form-group mt-2">
+										<label for="exampleFormControlTextarea1">Testimonial</label>
+										<textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Enter Judul" name="isitestimonial"></textarea>
 									</div>
 								</div>
 							</div>
@@ -435,5 +485,47 @@
 			</div>
 		</div>
 	</div>
+<?php endforeach ?>
+<!-- End of tambah carousel -->
 
-	<!-- End of Trust -->
+<!-- Modal Edit Testimonial -->
+<?php foreach ($testimonial as $row => $value): ?>
+	<div class="modal fade" id="edittestimoni<?php echo $value['id_testimoni'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title text-dark" id="exampleModalLabel">Ganti Carousel</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<form method="POST" action="<?php echo base_url('website/edit_testimoni') ?>" enctype="multipart/form-data">
+					<div class="modal-body">
+						<div class="row">
+							<div class="col">
+								<img class="gambar-edit-carousel" src="<?php echo base_url('assets/assets/img/upload/website/'.$value['gambar']) ?>" alt="">
+							</div>
+							<div class="col">
+								<div class="form-group text-dark">
+									<label for="exampleFormControlFile1">Masukan Gambar Baru</label>
+									<input type="text" name="id_testimoni" value="<?php echo $value['id_testimoni'] ?>" hidden>
+									<input type="text" name="gambar_lama" value="<?php echo $value['gambar'] ?>" hidden>
+									<input type="file" class="form-control-file" id="exampleFormControlFile1" name="gambar">
+									<div class="form-group mt-2">
+										<label for="exampleFormControlTextarea1">Isi</label>
+										<textarea class="form-control" id="exampleFormControlTextarea1" rows="8" placeholder="Masukan Judul" name="isi"><?php echo $value['isi'] ?></textarea>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+						<button type="submit" class="btn btn-primary" clicked>Simpan Edit</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+<?php endforeach ?>
+<!-- End Of Edit Testimonial -->

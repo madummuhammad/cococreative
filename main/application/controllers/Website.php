@@ -114,6 +114,18 @@ class Website extends CI_Controller {
 	{
 		$this->M_Website->edit_about();
 	}
+	public function tambah_testimoni()
+	{
+		$this->M_Website->tambah_testimoni();
+	}
+	public function edit_testimoni()
+	{
+		$this->M_Website->edit_testimoni();
+	}
+	public function hapus_testimoni()
+	{
+		$this->M_Website->hapus_testimoni();
+	}
 	public function edit_link_video()
 	{
 		if (empty($this->input->post('link')))
