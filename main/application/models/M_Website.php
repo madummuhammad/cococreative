@@ -117,11 +117,14 @@ class M_Website extends CI_Model {
 				if (get_cookie('lang_is')=='in') {
 					$this->db->where('id',$id);
 					$this->db->update('carousel',$data);
+
+					$this->db->where('id',$id);
+					$this->db->update('carousel',$data2);
 				} else {
 					$this->db->where('id_carousel',$id);
 					$this->db->update('carousel_eng',$data);
 
-					$this->db->where('id_carousel',$id);
+					$this->db->where('id',$id);
 					$this->db->update('carousel',$data2);
 				}
 				redirect('website');
