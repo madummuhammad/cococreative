@@ -60,4 +60,20 @@ class M_Website extends CI_Model {
 		
 		return $result;
 	}
+	public function tampil_link()
+	{
+		$result=$this->db->get('link_video')->row_array();
+		return $result;
+	}
+	public function tampil_testimonial()
+	{
+		if (get_cookie('lang_is')=='in') {
+			$result=$this->db->get('testimonial')->result_array();
+
+		}else{
+			$this->db->join('testimonial_eng','testimonial.id_testimoni=testimonial_eng.id_testimoni');
+			$result=$this->db->get('testimonial')->result_array();
+		}
+		return $result;
+	}
 }

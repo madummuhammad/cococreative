@@ -61,6 +61,21 @@ class M_Website extends CI_Model {
 		
 		return $result;
 	}
+
+	public function tampil_testimonial()
+	{
+		if (get_cookie('lang_is')=='in') {
+			$result=$this->db->get('testimonial')->result_array();
+
+		}else{
+			$this->db->join('testimonial_eng','testimonial.id_testimoni=testimonial_eng.id_testimoni');
+			$result=$this->db->get('testimonial')->result_array();
+		}
+		return $result;
+		
+	}
+
+
 	public function edit_carousel()
 	{
 		$id=$this->input->post('id');
@@ -102,11 +117,14 @@ class M_Website extends CI_Model {
 				if (get_cookie('lang_is')=='in') {
 					$this->db->where('id',$id);
 					$this->db->update('carousel',$data);
+
+					$this->db->where('id',$id);
+					$this->db->update('carousel',$data2);
 				} else {
 					$this->db->where('id_carousel',$id);
 					$this->db->update('carousel_eng',$data);
 
-					$this->db->where('id_carousel',$id);
+					$this->db->where('id',$id);
 					$this->db->update('carousel',$data2);
 				}
 				redirect('website');
@@ -624,6 +642,168 @@ class M_Website extends CI_Model {
 			'rules' => 'required'],
 			['field' => 'isi',
 			'rules' => 'required']
+		];
+	}
+
+	public function tampil_link()
+	{
+		$result=$this->db->get('link_video')->row_array();
+		return $result;
+	}
+
+	public function edit_link_video()
+	{
+		$url=$this->input->post('link');
+		$link=str_replace('http://www.youtube.com/watch?v=','', $url);
+		$link=str_replace('https://www.youtube.com/watch?v=', '', $link);
+		
+		$data=[
+			'link'=>$link
+		];
+		$this->db->where('id_link',1);
+		$this->db->update('link_video',$data);
+		redirect('website');
+	}
+
+	public function tambah_testimoni()
+	{
+		$isitestimoni=$this->input->post('isitestimoni');
+		$isitestimonial=$this->input->post('isitestimonial');
+
+		$this->db->select_max('id_testimoni','id_testimoni');
+		$id_testimoni=$this->db->get('testimonial')->row_array();
+
+		$gambar=$this->upload_testimoni();
+		$validasi=$this->form_validation->set_rules($this->rules_testimoni());
+		if ($validasi->run()==false) {
+			redirect('errorisi');
+		} else {
+			if ($gambar==NULL) {
+				redirect('errorgambar');
+			} else {
+				$data=[
+					'id_testimoni'=>$id_testimoni['id_testimoni']+1,
+					'isi'=>$isitestimoni,
+					'gambar'=>$gambar,
+				];
+				$data2=[
+					'id_testimoni_eng'=>$id_testimoni['id_testimoni']+1,
+					'isi'=>$isitestimonial,
+					'id_testimoni'=>$id_testimoni['id_testimoni']+1
+				];
+				$this->db->insert('testimonial',$data);
+				$this->db->insert('testimonial_eng',$data2);
+				redirect('website');
+			}
+		}
+	}
+
+	public function edit_testimoni()
+	{
+		$id=$this->input->post('id_testimoni');
+		$isi=$this->input->post('isi');
+		$gambar=$this->upload_testimoni();
+		$gambar_lama=$this->input->post('gambar_lama');
+		$validasi=$this->form_validation->set_rules($this->rules_testimoni_edit());
+		if ($validasi->run()==false) {
+			redirect('errorisi');
+		} else {
+			if ($gambar==NULL) {
+				$data=[
+					'isi'=>$isi,
+				];
+				
+				if (get_cookie('lang_is')=='in') {
+					$this->db->where('id_testimoni',$id);
+					$this->db->update('testimonial',$data);
+				} else {
+					$this->db->where('id_testimoni',$id);
+					$this->db->update('testimonial_eng',$data);
+				}
+				
+				redirect('website');
+			} else {
+				$data=[
+					'isi'=>$isi,
+				];
+
+				$data2=[
+					'gambar'=>$gambar
+				];
+
+				unlink(FCPATH . 'assets/assets/img/upload/website/'.$gambar_lama);
+				if (get_cookie('lang_is')=='in') {
+					$this->db->where('id_testimoni',$id);
+					$this->db->update('testimonial',$data);
+
+					$this->db->where('id_testimoni',$id);
+					$this->db->update('testimonial',$data2);
+				} else {
+					$this->db->where('id_testimoni',$id);
+					$this->db->update('testimonial_eng',$data);
+
+					$this->db->where('id_testimoni',$id);
+					$this->db->update('testimonial',$data2);
+				}
+				redirect('website');
+			}
+		}
+	}
+
+	public function hapus_testimoni()
+	{
+		$id=$this->uri->segment(3);
+		$this->db->where('id_testimoni',$id);
+		$result=$this->db->get('testimonial')->row_array();
+		$gambar_lama=$result['gambar'];
+
+
+		unlink(FCPATH . 'assets/assets/img/upload/website/'.$gambar_lama);
+
+		$this->db->where('id_testimoni',$id);
+		$this->db->delete('testimonial');
+
+		$this->db->where('id_testimoni',$id);
+		$this->db->delete('testimonial_eng');
+
+		redirect('website');
+	}
+
+
+	private function upload_testimoni()
+	{
+		$config['upload_path']          = './assets/assets/img/upload/website/';
+		$config['allowed_types']        = 'jpg|png|jpeg';
+		$config['file_name']            ='testimonial';
+		// $config['max_size']             = 100;
+		// $config['max_width']            = 1024;
+		// $config['max_height']           = 768;
+		$this->load->library('upload', $config);
+		if ( ! $this->upload->do_upload('gambar'))
+		{
+			$error = array('error' => $this->upload->display_errors());
+		}
+		else
+		{
+			return $this->upload->data("file_name");
+		}
+	}
+
+	private function rules_testimoni()
+	{
+		return [
+			['field' => 'isitestimoni',
+			'rules' => 'required'],
+			['field' => 'isitestimonial',
+			'rules' => 'required'],
+		];
+	}
+
+	private function rules_testimoni_edit()
+	{
+		return [
+			['field' => 'isi',
+			'rules' => 'required'],
 		];
 	}
 }

@@ -15,6 +15,7 @@ class Website extends CI_Controller {
 		$data['desproduk']=$this->M_Website->tampil_desproduk();
 		$data['top_img']=$this->M_Website->tampil_top_img(1);
 		$data['jenis_produk']=$this->M_Produk->tampil_jenis_produk();
+		$data['testimonial']=$this->M_Website->tampil_testimonial();
 		$this->load->view('tampilan_website/partial/header');
 		$this->load->view('tampilan_website/partial/mainNav');
 		$this->load->view('tampilan_website/v_home',$data);
@@ -112,5 +113,30 @@ class Website extends CI_Controller {
 	public function edit_about()
 	{
 		$this->M_Website->edit_about();
+	}
+	public function tambah_testimoni()
+	{
+		$this->M_Website->tambah_testimoni();
+	}
+	public function edit_testimoni()
+	{
+		$this->M_Website->edit_testimoni();
+	}
+	public function hapus_testimoni()
+	{
+		$this->M_Website->hapus_testimoni();
+	}
+	public function edit_link_video()
+	{
+		if (empty($this->input->post('link')))
+		{
+			$this->session->set_flashdata('message','<div class="alert alert-danger" role="alert">
+				Nama, Email dan Hak Akses Tidak Boleh Kosong. Email tidak boleh sama dengan yang ada!!
+				</div>');
+			$this->session->mark_as_temp('message',1);
+			redirect('error');
+		} else {
+			$this->M_Website->edit_link_video();
+		}
 	}
 }

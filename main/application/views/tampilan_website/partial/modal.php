@@ -219,183 +219,313 @@
 				<div class="modal-header">
 					<?php if (get_cookie('lang_is')=='in'): ?>
 						<h5 class="modal-title text-dark" id="exampleModalLabel">Edit Trust ( Indonesia )</h5>
-						<?php else: ?>
-							<h5 class="modal-title text-dark" id="exampleModalLabel">Edit Trust ( Bahasa Inggris )</h5>
-						<?php endif ?>
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-					</div>
-					<form method="POST" action="<?php echo base_url('website/edit_trust') ?>" enctype="multipart/form-data">
-						<div class="modal-body">
-							<div class="row">
-								<div class="col">
-									<div class="form-group text-dark">
-										<div class="form-group mt-2">
-											<label for="exampleFormControlTextarea1">Judul</label>
-											<input type="text" name="id" value="<?php echo $value['id'] ?>" hidden>
-											<input class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Masukan Judul" name="judul" value="<?php echo $value['judul'] ?>">
-											<label for="exampleFormControlTextarea1">Icon</label>
-											<input class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Masukan Judul" name="icon" value="<?php echo $value['icon'] ?>">
-											<label for="exampleFormControlTextarea1">Isi</label>
-											<textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Masukan Isi" name="isi"><?php echo $value['isi'] ?></textarea>
-										</div>
+					<?php else: ?>
+						<h5 class="modal-title text-dark" id="exampleModalLabel">Edit Trust ( Bahasa Inggris )</h5>
+					<?php endif ?>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<form method="POST" action="<?php echo base_url('website/edit_trust') ?>" enctype="multipart/form-data">
+					<div class="modal-body">
+						<div class="row">
+							<div class="col">
+								<div class="form-group text-dark">
+									<div class="form-group mt-2">
+										<label for="exampleFormControlTextarea1">Judul</label>
+										<input type="text" name="id" value="<?php echo $value['id'] ?>" hidden>
+										<input class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Masukan Judul" name="judul" value="<?php echo $value['judul'] ?>">
+										<label for="exampleFormControlTextarea1">Icon</label>
+										<input class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Masukan Judul" name="icon" value="<?php echo $value['icon'] ?>">
+										<label for="exampleFormControlTextarea1">Isi</label>
+										<textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Masukan Isi" name="isi"><?php echo $value['isi'] ?></textarea>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-							<button type="submit" class="btn btn-primary" clicked>Save changes</button>
-						</div>
-					</form>
-				</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						<button type="submit" class="btn btn-primary" clicked>Save changes</button>
+					</div>
+				</form>
 			</div>
 		</div>
-	<?php endforeach ?>
+	</div>
+<?php endforeach ?>
 
-	<!-- End of Trust -->
+<!-- End of Trust -->
 
 
-	<!-- Edit Deskripsi Produk -->
-	<?php foreach ($desproduk as $row => $value): ?>
-		<div class="modal fade" id="editdesproduk<?php echo $value['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-			<div class="modal-dialog modal-xl" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<?php if (get_cookie('lang_is')=='in'): ?>
-							<h5 class="modal-title text-dark" id="exampleModalLabel">Edit Produk Kami ( Indonesia )</h5>
-							<?php else: ?>
-								<h5 class="modal-title text-dark" id="exampleModalLabel">Edit Our Produk (Bahasa Inggris)</h5>
-							<?php endif ?>
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
-						</div>
-						<form method="POST" action="<?php echo base_url('website/edit_desproduk') ?>" enctype="multipart/form-data">
-							<div class="modal-body">
-								<div class="row">
-									<div class="col">
-										<img class="gambar-edit-carousel" src="<?php echo base_url('assets/assets/img/upload/website/'.$value['gambar']) ?>" alt="">
-									</div>
-									<div class="col">
-										<div class="form-group text-dark">
-											<label for="exampleFormControlFile1">Masukan Gambar Baru</label>
-											<input type="text" name="id" value="<?php echo $value['id'] ?>" hidden>
-											<input type="text" name="gambar_lama" value="<?php echo $value['gambar'] ?>" hidden>
-											<input type="file" class="form-control-file" id="exampleFormControlFile1" name="gambar">
-											<div class="form-group mt-2">
-												<label for="exampleFormControlTextarea1">Judul</label>
-												<textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Masukan Judul" name="judul"><?php echo $value['judul'] ?></textarea>
-												<label for="exampleFormControlTextarea1">Tagline</label>
-												<textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Masukan Isi" name="isi"><?php echo $value['isi'] ?></textarea>
-											</div>
-										</div>
+<!-- Edit Deskripsi Produk -->
+<?php foreach ($desproduk as $row => $value): ?>
+	<div class="modal fade" id="editdesproduk<?php echo $value['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-xl" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<?php if (get_cookie('lang_is')=='in'): ?>
+						<h5 class="modal-title text-dark" id="exampleModalLabel">Edit Produk Kami ( Indonesia )</h5>
+					<?php else: ?>
+						<h5 class="modal-title text-dark" id="exampleModalLabel">Edit Our Produk (Bahasa Inggris)</h5>
+					<?php endif ?>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<form method="POST" action="<?php echo base_url('website/edit_desproduk') ?>" enctype="multipart/form-data">
+					<div class="modal-body">
+						<div class="row">
+							<div class="col">
+								<img class="gambar-edit-carousel" src="<?php echo base_url('assets/assets/img/upload/website/'.$value['gambar']) ?>" alt="">
+							</div>
+							<div class="col">
+								<div class="form-group text-dark">
+									<label for="exampleFormControlFile1">Masukan Gambar Baru</label>
+									<input type="text" name="id" value="<?php echo $value['id'] ?>" hidden>
+									<input type="text" name="gambar_lama" value="<?php echo $value['gambar'] ?>" hidden>
+									<input type="file" class="form-control-file" id="exampleFormControlFile1" name="gambar">
+									<div class="form-group mt-2">
+										<label for="exampleFormControlTextarea1">Judul</label>
+										<textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Masukan Judul" name="judul"><?php echo $value['judul'] ?></textarea>
+										<label for="exampleFormControlTextarea1">Tagline</label>
+										<textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Masukan Isi" name="isi"><?php echo $value['isi'] ?></textarea>
 									</div>
 								</div>
 							</div>
-							<div class="modal-footer">
-								<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-								<button type="submit" class="btn btn-primary" clicked>Save changes</button>
-							</div>
-						</form>
+						</div>
 					</div>
-				</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						<button type="submit" class="btn btn-primary" clicked>Save changes</button>
+					</div>
+				</form>
 			</div>
-		<?php endforeach ?>
-		<!-- End of Edit Deskripsi Produk -->
+		</div>
+	</div>
+<?php endforeach ?>
+<!-- End of Edit Deskripsi Produk -->
 
-		<!-- Edit Top Image -->
-		<?php foreach ($top_img as $row => $value): ?>
-			<div class="modal fade" id="edittopimage<?php echo $value['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-				<div class="modal-dialog modal-xl" role="document">
-					<div class="modal-content">
-						<div class="modal-header">
-							<?php if (get_cookie('lang_is')=='in'): ?>
-								<h5 class="modal-title text-dark" id="exampleModalLabel">Edit Ini ( Indonesia )</h5>
-								<?php else: ?>
-									<h5 class="modal-title text-dark" id="exampleModalLabel">Edit Ini (Bahasa Inggris)</h5>
-								<?php endif ?>
-								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-									<span aria-hidden="true">&times;</span>
-								</button>
+<!-- Edit Top Image -->
+<?php foreach ($top_img as $row => $value): ?>
+	<div class="modal fade" id="edittopimage<?php echo $value['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-xl" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<?php if (get_cookie('lang_is')=='in'): ?>
+						<h5 class="modal-title text-dark" id="exampleModalLabel">Edit Ini ( Indonesia )</h5>
+					<?php else: ?>
+						<h5 class="modal-title text-dark" id="exampleModalLabel">Edit Ini (Bahasa Inggris)</h5>
+					<?php endif ?>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<form method="POST" action="<?php echo base_url('website/edit_topimage') ?>" enctype="multipart/form-data">
+					<div class="modal-body">
+						<div class="row">
+							<div class="col">
+								<img class="gambar-edit-carousel" src="<?php echo base_url('assets/assets/img/upload/website/'.$value['gambar']) ?>" alt="">
 							</div>
-							<form method="POST" action="<?php echo base_url('website/edit_topimage') ?>" enctype="multipart/form-data">
-								<div class="modal-body">
-									<div class="row">
-										<div class="col">
-											<img class="gambar-edit-carousel" src="<?php echo base_url('assets/assets/img/upload/website/'.$value['gambar']) ?>" alt="">
-										</div>
-										<div class="col">
-											<div class="form-group text-dark">
-												<label for="exampleFormControlFile1">Masukan Gambar Baru</label>
-												<input type="text" name="id" value="<?php echo $value['id'] ?>" hidden>
-												<input type="text" name="gambar_lama" value="<?php echo $value['gambar'] ?>" hidden>
-												<input type="file" class="form-control-file" id="exampleFormControlFile1" name="gambar">
-												<div class="form-group mt-2">
-													<label for="exampleFormControlTextarea1">Judul</label>
-													<input class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Masukan Judul" name="judul" value="<?php echo $value['judul'] ?>">
-													<input type="text" name="page" value="<?php echo $this->uri->segment(2) ?>" hidden>
-												</div>
-											</div>
-										</div>
+							<div class="col">
+								<div class="form-group text-dark">
+									<label for="exampleFormControlFile1">Masukan Gambar Baru</label>
+									<input type="text" name="id" value="<?php echo $value['id'] ?>" hidden>
+									<input type="text" name="gambar_lama" value="<?php echo $value['gambar'] ?>" hidden>
+									<input type="file" class="form-control-file" id="exampleFormControlFile1" name="gambar">
+									<div class="form-group mt-2">
+										<label for="exampleFormControlTextarea1">Judul</label>
+										<input class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Masukan Judul" name="judul" value="<?php echo $value['judul'] ?>">
+										<input type="text" name="page" value="<?php echo $this->uri->segment(2) ?>" hidden>
 									</div>
 								</div>
-								<div class="modal-footer">
-									<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-									<button type="submit" class="btn btn-primary" clicked>Save changes</button>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						<button type="submit" class="btn btn-primary" clicked>Save changes</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+<?php endforeach ?>
+<!-- End Of Edit -->
+
+<!-- Edit Top About -->
+<?php foreach ($about as $row => $value): ?>
+	<div class="modal fade" id="about<?php echo $value['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-xl" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<?php if (get_cookie('lang_is')=='in'): ?>
+						<h5 class="modal-title text-dark" id="exampleModalLabel">Edit Profil Kami ( Indonesia )</h5>
+					<?php else: ?>
+						<h5 class="modal-title text-dark" id="exampleModalLabel">Edit Our Profile (Bahasa Inggris)</h5>
+					<?php endif ?>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<form method="POST" action="<?php echo base_url('website/edit_about') ?>" enctype="multipart/form-data">
+					<div class="modal-body">
+						<div class="row">
+							<div class="col">
+								<img class="gambar-edit-carousel" src="<?php echo base_url('assets/assets/img/upload/website/'.$value['gambar']) ?>" alt="">
+							</div>
+							<div class="col">
+								<div class="form-group text-dark">
+									<label for="exampleFormControlFile1">Masukan Gambar Baru</label>
+									<input type="text" name="id" value="<?php echo $value['id'] ?>" hidden>
+									<input type="text" name="gambar_lama" value="<?php echo $value['gambar'] ?>" hidden>
+									<input type="file" class="form-control-file" id="exampleFormControlFile1" name="gambar">
+									<div class="form-group mt-2">
+										<label for="exampleFormControlTextarea1">Judul</label>
+										<input class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Masukan Judul" name="judul" value="<?php echo $value['judul'] ?>">
+										<label for="exampleFormControlTextarea1">Isi</label>
+										<textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Masukan Isi" name="isi"><?php echo $value['isi'] ?></textarea>
+									</div>
 								</div>
-							</form>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						<button type="submit" class="btn btn-primary" clicked>Save changes</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+<?php endforeach ?>
+<!-- End Of Edit -->
+
+<!-- Edit Link Video -->
+<div class="modal fade" id="editlinkvideo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-md" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<?php if (get_cookie('lang_is')=='in'): ?>
+					<h5 class="modal-title text-dark" id="exampleModalLabel">Edit Link Video</h5>
+				<?php else: ?>
+					<h5 class="modal-title text-dark" id="exampleModalLabel">Edit Link Video</h5>
+				<?php endif ?>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<form method="POST" action="<?php echo base_url('website/edit_link_video') ?>" enctype="multipart/form-data">
+				<div class="modal-body">
+					<div class="row">
+						<div class="col">
+							<div class="form-group text-dark">
+								<div class="form-group mt-2">
+									<label for="exampleFormControlTextarea1">Masukan Link</label>
+									<input class="form-control" placeholder="Masukan Link" name="link">
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
-			<?php endforeach ?>
-			<!-- End Of Edit -->
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button type="submit" class="btn btn-primary" clicked>Save changes</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
 
-			<!-- Edit Top About -->
-			<?php foreach ($about as $row => $value): ?>
-				<div class="modal fade" id="about<?php echo $value['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-					<div class="modal-dialog modal-xl" role="document">
-						<div class="modal-content">
-							<div class="modal-header">
-								<?php if (get_cookie('lang_is')=='in'): ?>
-									<h5 class="modal-title text-dark" id="exampleModalLabel">Edit Profil Kami ( Indonesia )</h5>
-									<?php else: ?>
-										<h5 class="modal-title text-dark" id="exampleModalLabel">Edit Our Profile (Bahasa Inggris)</h5>
-									<?php endif ?>
-									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-										<span aria-hidden="true">&times;</span>
-									</button>
+<!-- End of Trust -->
+
+<!-- Tambah Testimoni-->
+<?php foreach ($testimonial as $row => $value): ?>
+	<div class="modal fade" id="tambahtestimoni" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-xl" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title text-dark" id="exampleModalLabel">Tambah Testimoni</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<form method="POST" action="<?php echo base_url('website/tambah_testimoni') ?>" enctype="multipart/form-data">
+					<div class="modal-body">
+						<div class="row">
+							<div class="col-sm-12">
+								<label for="exampleFormControlFile1" class="text-center w-100">Masukan Gambar Baru</label>
+								<input type="file" class="form-control-file" id="exampleFormControlFile1" name="gambar">
+								<hr>
+							</div>
+							<div class="col">
+								<div class="form-group text-dark">
+									<h5>Bahasa Indonesia</h5>
+									<div class="form-group mt-2">
+										<label for="exampleFormControlTextarea1">Isi Testimoni</label>
+										<textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Masukan Judul" name="isitestimoni"></textarea>
+									</div>
 								</div>
-								<form method="POST" action="<?php echo base_url('website/edit_about') ?>" enctype="multipart/form-data">
-									<div class="modal-body">
-										<div class="row">
-											<div class="col">
-												<img class="gambar-edit-carousel" src="<?php echo base_url('assets/assets/img/upload/website/'.$value['gambar']) ?>" alt="">
-											</div>
-											<div class="col">
-												<div class="form-group text-dark">
-													<label for="exampleFormControlFile1">Masukan Gambar Baru</label>
-													<input type="text" name="id" value="<?php echo $value['id'] ?>" hidden>
-													<input type="text" name="gambar_lama" value="<?php echo $value['gambar'] ?>" hidden>
-													<input type="file" class="form-control-file" id="exampleFormControlFile1" name="gambar">
-													<div class="form-group mt-2">
-														<label for="exampleFormControlTextarea1">Judul</label>
-														<input class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Masukan Judul" name="judul" value="<?php echo $value['judul'] ?>">
-														<label for="exampleFormControlTextarea1">Isi</label>
-														<textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Masukan Isi" name="isi"><?php echo $value['isi'] ?></textarea>
-													</div>
-												</div>
-											</div>
-										</div>
+							</div>
+							<div class="col">
+								<div class="form-group text-dark">
+									<h5>Bahasa Inggris</h5>
+									<div class="form-group mt-2">
+										<label for="exampleFormControlTextarea1">Testimonial</label>
+										<textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Enter Judul" name="isitestimonial"></textarea>
 									</div>
-									<div class="modal-footer">
-										<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-										<button type="submit" class="btn btn-primary" clicked>Save changes</button>
-									</div>
-								</form>
+								</div>
 							</div>
 						</div>
 					</div>
-				<?php endforeach ?>
-<!-- End Of Edit -->
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						<button type="submit" class="btn btn-primary" clicked>Save changes</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+<?php endforeach ?>
+<!-- End of tambah carousel -->
+
+<!-- Modal Edit Testimonial -->
+<?php foreach ($testimonial as $row => $value): ?>
+	<div class="modal fade" id="edittestimoni<?php echo $value['id_testimoni'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title text-dark" id="exampleModalLabel">Ganti Carousel</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<form method="POST" action="<?php echo base_url('website/edit_testimoni') ?>" enctype="multipart/form-data">
+					<div class="modal-body">
+						<div class="row">
+							<div class="col">
+								<img class="gambar-edit-carousel" src="<?php echo base_url('assets/assets/img/upload/website/'.$value['gambar']) ?>" alt="">
+							</div>
+							<div class="col">
+								<div class="form-group text-dark">
+									<label for="exampleFormControlFile1">Masukan Gambar Baru</label>
+									<input type="text" name="id_testimoni" value="<?php echo $value['id_testimoni'] ?>" hidden>
+									<input type="text" name="gambar_lama" value="<?php echo $value['gambar'] ?>" hidden>
+									<input type="file" class="form-control-file" id="exampleFormControlFile1" name="gambar">
+									<div class="form-group mt-2">
+										<label for="exampleFormControlTextarea1">Isi</label>
+										<textarea class="form-control" id="exampleFormControlTextarea1" rows="8" placeholder="Masukan Judul" name="isi"><?php echo $value['isi'] ?></textarea>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+						<button type="submit" class="btn btn-primary" clicked>Simpan Edit</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+<?php endforeach ?>
+<!-- End Of Edit Testimonial -->
