@@ -152,8 +152,8 @@
       </div>
       <div class="col-sm-12">
         <div class="mx-auto text-center m-5">
-          <object class="col-lg-7 col-sm-12" height="430" data="http://www.youtube.com/v/<?php echo $this->M_Website->tampil_link()['link'] ?>" type="application/x-shockwave-flash">
-            <param name="src" value="http://www.youtube.com/v/<?php echo $this->M_Website->tampil_link()['link'] ?>" />
+          <object class="col-lg-7 col-sm-12" height="430" data="https://www.youtube.com/v/<?php echo $this->M_Website->tampil_link()['link'] ?>" type="application/x-shockwave-flash">
+            <param name="src" value="https://www.youtube.com/v/<?php echo $this->M_Website->tampil_link()['link'] ?>" />
           </object>
           <div class="btn-group" role="group" aria-label="Basic example">
             <!-- Edit -->
