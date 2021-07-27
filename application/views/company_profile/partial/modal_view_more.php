@@ -26,7 +26,8 @@
 										Type
 									</p> -->
 									<form action="<?php echo base_url('Order') ?>" method="POST">
-										<input type="text" class="form-control" value="Plant Support" name="product" readonly="" hidden>
+										<input type="text" class="form-control" value="<?php echo $value['nama_jenis_produk'];echo ' '.$value['isi_pilihan_ukuran'] ?>" name="product" readonly="">
+										<input type="text" name="size" value="<?php echo $value['harga'] ?>">
 <!-- 										<div class="input-group mb-3">
 											<div class="input-group-prepend">
 												<label class="input-group-text" for="inputGroupSelect01">Size</label>
