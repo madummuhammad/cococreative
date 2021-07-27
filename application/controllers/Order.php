@@ -9,6 +9,7 @@ class Order extends CI_Controller {
 	}
 	public function index()
 	{
+		$data['jenis_produk']=$this->M_Produk->tampil_jenis_produk();
 		$order=$this->input->post('order-now');
 		$add=$this->input->post('add-chart');
 
@@ -22,13 +23,14 @@ class Order extends CI_Controller {
 		$this->form_validation->set_rules('size','Size','trim|required');
 		$this->form_validation->set_rules('qty','Qty','trim|required');
 		if ($this->form_validation->run()==false) {
+			redirect('asdfasdf');
 			// $this->session->set_flashdata('failed',$product);
-			$this->load->view('company_profile/partial/header');
-			$this->load->view('company_profile/partial/preloader');
-			$this->load->view('company_profile/partial/mainNav');
-			$this->load->view('company_profile/v_product');
-			$this->load->view('company_profile/partial/modal');
-			$this->load->view('company_profile/partial/footer');
+			// $this->load->view('company_profile/partial/header');
+			// $this->load->view('company_profile/partial/preloader');
+			// $this->load->view('company_profile/partial/mainNav');
+			// $this->load->view('company_profile/v_product',$data);
+			// $this->load->view('company_profile/partial/modal');
+			// $this->load->view('company_profile/partial/footer');
 		} else {
 			if ($order!==NULL) {
 				$product=$this->input->post('product');

@@ -24,6 +24,7 @@ class Website extends CI_Controller {
 	}
 	public function about()
 	{
+		$data['testimonial']=$this->M_Website->tampil_testimonial();
 		$data['jenis_produk']=$this->M_Produk->tampil_jenis_produk();
 		$data['carousel']=$this->M_Website->tampil_carousel();
 		$data['trust']=$this->M_Website->tampil_trust();
@@ -39,6 +40,7 @@ class Website extends CI_Controller {
 	}
 	public function produk()
 	{
+		$data['testimonial']=$this->M_Website->tampil_testimonial();
 		$page='produk';
 		$data['about']=$this->M_Website->tampil_about();
 		$data['carousel']=$this->M_Website->tampil_carousel();
@@ -56,6 +58,7 @@ class Website extends CI_Controller {
 	}
 	public function testimonial()
 	{
+		$data['testimonial']=$this->M_Website->tampil_testimonial();
 		$page='testiomonial';
 		$data['carousel']=$this->M_Website->tampil_carousel();
 		$data['trust']=$this->M_Website->tampil_trust();

@@ -142,7 +142,7 @@
                                         <a href="https://wa.me/send?phone=6281391077838&text=Hallo%20Admin%20Cococreative%0ASaya%20ingin%20membeli%20produk%20berikut:
                                         <?php foreach ($this->session->userdata('dataorder') as $row =>$value){ ?>
                                             %0ANama%20Produk:%20<?php echo $value['product'] ?>
-                                            %0AType:%20<?php echo $value['size'] ?>
+                                            %0ATotal%20Pembelian:%20<?php echo $value['size'] ?>
                                             %0AQty:%20<?php echo $value['qty'] ?>
                                         <?php } ?>
                                         %0ATerimakasih"
