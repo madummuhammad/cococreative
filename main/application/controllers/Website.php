@@ -16,11 +16,12 @@ class Website extends CI_Controller {
 		$data['top_img']=$this->M_Website->tampil_top_img(1);
 		$data['jenis_produk']=$this->M_Produk->tampil_jenis_produk();
 		$data['testimonial']=$this->M_Website->tampil_testimonial();
+		$data['footer_deskripsi']=$this->M_Website->tampil_footer_deskripsi();
 		$this->load->view('tampilan_website/partial/header');
 		$this->load->view('tampilan_website/partial/mainNav');
 		$this->load->view('tampilan_website/v_home',$data);
 		$this->load->view('tampilan_website/partial/modal',$data);
-		$this->load->view('tampilan_website/partial/footer');
+		$this->load->view('tampilan_website/partial/footer',$data);
 	}
 	public function about()
 	{
@@ -31,6 +32,7 @@ class Website extends CI_Controller {
 		$data['desproduk']=$this->M_Website->tampil_desproduk();
 		$data['top_img']=$this->M_Website->tampil_top_img(1);
 		$data['about']=$this->M_Website->tampil_about();
+		$data['footer_deskripsi']=$this->M_Website->tampil_footer_deskripsi();
 		$this->load->view('tampilan_website/partial/header');
 		$this->load->view('tampilan_website/partial/mainNav');
 		$this->load->view('tampilan_website/partial/top_image',$data);
@@ -46,6 +48,7 @@ class Website extends CI_Controller {
 		$data['carousel']=$this->M_Website->tampil_carousel();
 		$data['trust']=$this->M_Website->tampil_trust();
 		$data['desproduk']=$this->M_Website->tampil_desproduk();
+		$data['footer_deskripsi']=$this->M_Website->tampil_footer_deskripsi();
 		$data['jenis_produk']=$this->M_Produk->tampil_jenis_produk();
 		$this->load->view('tampilan_website/partial/header');
 		$this->load->view('tampilan_website/partial/mainNav');
@@ -60,6 +63,7 @@ class Website extends CI_Controller {
 	{
 		$data['testimonial']=$this->M_Website->tampil_testimonial();
 		$page='testiomonial';
+		$data['footer_deskripsi']=$this->M_Website->tampil_footer_deskripsi();
 		$data['carousel']=$this->M_Website->tampil_carousel();
 		$data['trust']=$this->M_Website->tampil_trust();
 		$data['about']=$this->M_Website->tampil_about();
@@ -141,5 +145,24 @@ class Website extends CI_Controller {
 		} else {
 			$this->M_Website->edit_link_video();
 		}
+	}
+	public function edit_deskripsi_footer()
+	{
+		$this->M_Website->edit_deskripsi_footer();
+	}
+
+	public function tambah_logo_bisnis_footer()
+	{
+		$this->M_Website->tambah_logo_bisnis_footer();
+	}
+
+	public function edit_logo_bisnis_footer()
+	{
+		$this->M_Website->edit_logo_bisnis_footer();
+	}
+
+	public function hapus_logo_bisnis_footer()
+	{
+		$this->M_Website->hapus_logo_bisnis_footer();
 	}
 }

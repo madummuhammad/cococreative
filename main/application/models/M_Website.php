@@ -180,6 +180,108 @@ class M_Website extends CI_Model {
 		redirect('website');
 	}
 
+
+// Tampil Footer Deskripsi
+	public function tampil_footer_deskripsi()
+	{
+		$this->db->join('footer_deskripsi_eng','footer_deskripsi.id_footer_deskripsi=footer_deskripsi_eng.id_footer_deskripsi');
+		$result=$this->db->get('footer_deskripsi')->row_array();
+		return $result;
+	}
+// 
+
+	public function tampil_logo_bisnis_footer()
+	{
+		$result=$this->db->get('logo_bisnis_footer')->result_array();
+		return $result;
+	}
+
+	public function tambah_logo_bisnis_footer()
+	{
+		$link=$this->input->post('link');
+		$gambar=$this->upload_logo_bisnis_footer();
+		$validasi=$this->form_validation->set_rules($this->rules_logo_bisnis_footer());
+		if ($validasi->run()==false) {
+			redirect('website');
+		} else {
+			$data=[
+				'link'=>$link,
+				'gambar'=>$gambar
+			];
+			$this->db->insert('logo_bisnis_footer',$data);
+			redirect('website');
+		}
+	}
+
+	public function edit_logo_bisnis_footer()
+	{
+		$id=$this->input->post('id');
+		$link=$this->input->post('link');
+		$gambar=$this->upload_logo_bisnis_footer();
+		$gambar_lama=$this->input->post('gambar_lama');
+		$validasi=$this->form_validation->set_rules($this->rules_logo_bisnis_footer());
+		if ($validasi->run()==false) {
+			redirect('error');
+		} else {
+			if ($gambar==NULL) {
+				$data=[
+					'link'=>$link,
+				];
+					$this->db->where('id',$id);
+					$this->db->update('logo_bisnis_footer',$data);
+				redirect('website');
+			} else {
+				$data=[
+					'link'=>$link,
+					'gambar'=>$gambar
+				];
+				unlink(FCPATH . 'assets/assets/img/logos/'.$gambar_lama);
+					$this->db->where('id',$id);
+					$this->db->update('logo_bisnis_footer',$data);
+				redirect('website');
+			}
+		}
+	}
+
+	public function hapus_logo_bisnis_footer()
+	{
+		$id=$this->uri->segment(3);
+		$this->db->where('id',$id);
+		$result=$this->db->get('logo_bisnis_footer')->row_array();
+		$gambar_lama=$result['gambar'];
+		unlink(FCPATH . 'assets/assets/img/logos/'.$gambar_lama);
+		$this->db->where('id',$id);
+		$this->db->delete('logo_bisnis_footer');
+		redirect('website');
+	}
+
+	private function rules_logo_bisnis_footer()
+	{
+		return [
+			['field' => 'link',
+			'rules' => 'required']
+		];
+	}
+
+	private function upload_logo_bisnis_footer()
+	{
+		$config['upload_path']          = './assets/assets/img/logos/';
+		$config['allowed_types']        = 'gif|jpg|png|jpeg|svg';
+		$config['file_name']            ='logo_bisnis_footer';
+// $config['max_size']             = 100;
+// $config['max_width']            = 1024;
+// $config['max_height']           = 768;
+		$this->load->library('upload', $config);
+		if ( ! $this->upload->do_upload('gambar'))
+		{
+			$error = array('error' => $this->upload->display_errors());
+		}
+		else
+		{
+			return $this->upload->data("file_name");
+		}
+	}
+
 	private function upload_carousel()
 	{
 		$config['upload_path']          = './assets/assets/img/upload/website/';
@@ -297,7 +399,7 @@ class M_Website extends CI_Model {
 				$this->db->where('id',$id);
 				$this->db->update('trust',$data2);
 			}
-			
+
 			redirect('website');
 		}
 	}
@@ -392,7 +494,7 @@ class M_Website extends CI_Model {
 					$this->db->where('id',$id);
 					$this->db->update('des_product',$data2);
 				}
-				
+
 				redirect('website');
 			}
 		}
@@ -451,7 +553,7 @@ class M_Website extends CI_Model {
 			} else {
 				redirect('website/produk');
 			}
-			
+
 		} else {
 			if ($gambar==NULL) {
 				$data=[
@@ -464,7 +566,7 @@ class M_Website extends CI_Model {
 					$this->db->where('id',$id);
 					$this->db->update('top_img_eng',$data);
 				}
-				
+
 				if ($page=='about') {
 					redirect('website/about');
 				} elseif ($page=='testimonial') {
@@ -494,7 +596,7 @@ class M_Website extends CI_Model {
 					$this->db->where('id',$id);
 					$this->db->update('top_img',$data2);
 				}
-				
+
 				if ($page=='about') {
 					redirect('website/about');
 				} elseif ($page=='testimonial') {
@@ -563,7 +665,7 @@ class M_Website extends CI_Model {
 					$this->db->where('id',$id);
 					$this->db->update('about_eng',$data);
 				}
-				
+
 				if ($page=='edit_about') {
 					redirect('website/about');
 				} elseif ($page=='testimonial') {
@@ -572,7 +674,7 @@ class M_Website extends CI_Model {
 					redirect('website/produk');
 				}
 			} else {
-				
+
 				unlink(FCPATH . 'assets/assets/img/upload/website/'.$gambar_lama);
 
 				if (get_cookie('lang_is')=='in') {
@@ -600,7 +702,7 @@ class M_Website extends CI_Model {
 					$this->db->where('id',$id);
 					$this->db->update('about_eng',$data);
 				}
-				
+
 
 
 				if ($page=='edit_about') {
@@ -656,7 +758,7 @@ class M_Website extends CI_Model {
 		$url=$this->input->post('link');
 		$link=str_replace('http://www.youtube.com/watch?v=','', $url);
 		$link=str_replace('https://www.youtube.com/watch?v=', '', $link);
-		
+
 		$data=[
 			'link'=>$link
 		];
@@ -710,9 +812,9 @@ class M_Website extends CI_Model {
 		} else {
 			if ($gambar==NULL) {
 				$data=[
-					'isi'=>$isi,
+					'isi'=>$isi
 				];
-				
+
 				if (get_cookie('lang_is')=='in') {
 					$this->db->where('id_testimoni',$id);
 					$this->db->update('testimonial',$data);
@@ -720,7 +822,7 @@ class M_Website extends CI_Model {
 					$this->db->where('id_testimoni',$id);
 					$this->db->update('testimonial_eng',$data);
 				}
-				
+
 				redirect('website');
 			} else {
 				$data=[
@@ -805,5 +907,34 @@ class M_Website extends CI_Model {
 			['field' => 'isi',
 			'rules' => 'required'],
 		];
+	}
+
+	public function edit_deskripsi_footer()
+	{
+		$isi=$this->input->post('isi');
+		$isi_eng=$this->input->post('isi_eng');
+		if (empty($isi)) {
+			redirect('error');
+		} else {
+			if (empty($isi_eng)) {
+				redirect('error');
+			} else {
+				$data1=[
+					'isi'=>$isi
+				];
+
+				$data2=[
+					'isi_eng'=>$isi_eng
+				];
+
+				$this->db->where('id_footer_deskripsi',1);
+				$this->db->update('footer_deskripsi',$data1);
+
+				$this->db->where('id_footer_deskripsi_eng',1);
+				$this->db->update('footer_deskripsi_eng',$data2);
+
+				redirect('website');
+			}
+		}
 	}
 }

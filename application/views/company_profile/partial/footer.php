@@ -7,7 +7,7 @@
                         <?php echo SITE_NAME ?>
                     </h4>
                     <p class="text-muted text-white">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing, elit. Error libero, nihil. Perferendis quam quibusdam velit. Veritatis aut dolorem est culpa praesentium, ea pariatur aliquam unde odio molestias iusto asperiores quam.
+                        <?php echo $this->M_Website->tampil_footer_deskripsi()['isi_eng'] ?>
                     </p>
                 </div>
                 <div class="col-lg-6">
@@ -17,8 +17,9 @@
                     <div class="d-flex flex-column">
                     <!--                             <a href="#" class="text-link">
                     Contact Us </a> -->
-                    <a href="https://www.tokopedia.com/cococreative"><img class="icon-e-commerce" src="<?php echo base_url('assets/assets/img/logos/logo_tokopedia.svg') ?>"></a>
-                    <a href="https://shopee.co.id/firmanyusuf13"><img class="icon-e-commerce" src="<?php echo base_url('assets/assets/img/logos/logo_shopee.svg') ?>"></a>
+                    <?php foreach ($this->M_Website->tampil_logo_bisnis_footer() as $row => $value): ?>
+                        <a href="<?php echo $value['link'] ?>"><img class="icon-e-commerce" src="<?php echo base_url('main/assets/assets/img/logos/')?><?php echo $value['gambar'] ?>"></a>
+                    <?php endforeach ?>
                 </div>
             </div>
         </div>
@@ -33,7 +34,7 @@
                         <?php echo SITE_NAME ?>
                     </h4>
                     <p class="text-muted text-white">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing, elit. Error libero, nihil. Perferendis quam quibusdam velit. Veritatis aut dolorem est culpa praesentium, ea pariatur aliquam unde odio molestias iusto asperiores quam.
+                        <?php echo $this->M_Website->tampil_footer_deskripsi()['isi'] ?>
                     </p>
                 </div>
                 <div class="col-lg-6">
@@ -43,8 +44,9 @@
                     <div class="d-flex flex-column">
                     <!--                             <a href="#" class="text-link">
                     Contact Us </a> -->
-                    <a href="https://www.tokopedia.com/cococreative"><img class="icon-e-commerce" src="<?php echo base_url('assets/assets/img/logos/logo_tokopedia.svg') ?>"></a>
-                    <a href="https://shopee.co.id/firmanyusuf13"><img class="icon-e-commerce" src="<?php echo base_url('assets/assets/img/logos/logo_shopee.svg') ?>"></a>
+                    <?php foreach ($this->M_Website->tampil_logo_bisnis_footer() as $row => $value): ?>
+                        <a href="<?php echo $value['link'] ?>"><img class="icon-e-commerce" src="<?php echo base_url('main/assets/assets/img/logos/')?><?php echo $value['gambar'] ?>"></a>
+                    <?php endforeach ?>
                 </div>
             </div>
         </div>
@@ -113,37 +115,36 @@
                     <?php if ($this->session->userdata('no_hp')): ?>
                         <div class="isi">
                         </div>
-                        <?php else: ?>
-                           <ul class="pl-3 pr-3 pt-1 mb-1" id="scroll">
-                            <div class="card border-1 rounded-lg mt-5 shadow-lg">
-                                <div class="card-body">
-                                    <form action="<?php echo base_url('pesan/login') ?>" method="POST">
-                                        <div class="form-group">
-                                            <label class="small mb-1 text-dark" for="email">No Hp / Whatsapp</label>
-                                            <input class="form-control py-4 isi_nomor" id="no_hp" type="text" placeholder="Masukan No Hape" name="nohp" autofocus>
-                                            <input type="text" name="url" value="<?php echo $this->uri->segment(1) ?>" hidden>
-                                            <small class="text-danger">
-                                                <?php echo form_error('email'); ?></small>
-                                            </div>
-                                            <div class="form-group d-flex align-items-center justify-content-around mt-4 mb-0">
-                                                <button class="btn btn-primary w-100 login" type="submit" name="submit">Mulai Mengirim Pesan</button>
-                                            </div>
-                                        </form>
-                                    </div>
+                    <?php else: ?>
+                     <ul class="pl-3 pr-3 pt-1 mb-1" id="scroll">
+                        <div class="card border-1 rounded-lg mt-5 shadow-lg">
+                            <div class="card-body">
+                                <form action="<?php echo base_url('pesan/login') ?>" method="POST">
+                                    <div class="form-group">
+                                        <label class="small mb-1 text-dark" for="email">No Hp / Whatsapp</label>
+                                        <input class="form-control py-4 isi_nomor" id="no_hp" type="text" placeholder="Masukan No Hape" name="nohp" autofocus>
+                                        <input type="text" name="url" value="<?php echo $this->uri->segment(1) ?>" hidden>
+                                        <small class="text-danger">
+                                            <?php echo form_error('email'); ?></small>
+                                        </div>
+                                        <div class="form-group d-flex align-items-center justify-content-around mt-4 mb-0">
+                                            <button class="btn btn-primary w-100 login" type="submit" name="submit">Mulai Mengirim Pesan</button>
+                                        </div>
+                                    </form>
                                 </div>
-                            </ul>   
-                        <?php endif ?>
+                            </div>
+                        </ul>   
+                    <?php endif ?>
 
-                        <p class="text-center mb-2 sender font-italic">
-                        </p>
-                        <div class="msg-box p-2">
-                            <div class="row">
-                                <div class="col-md-9">
-                                    <input type="text" name="pesan" autocomplete="off" class="form-control isipesan" placeholder="message ...">
-                                </div>
-                                <div class="col-md-3 pl-0">
-                                    <button class="btn btn-success send">Send</button>
-                                </div>
+                    <p class="text-center mb-2 sender font-italic">
+                    </p>
+                    <div class="msg-box p-2">
+                        <div class="row">
+                            <div class="col-md-9">
+                                <input type="text" name="pesan" autocomplete="off" class="form-control isipesan" placeholder="message ...">
+                            </div>
+                            <div class="col-md-3 pl-0">
+                                <button class="btn btn-success send">Send</button>
                             </div>
                         </div>
                     </div>
@@ -151,63 +152,64 @@
             </div>
         </div>
     </div>
-    <!-- End Of Whatsapp Icon -->
-    <!-- Contact form JS-->
-    <script src="<?php echo base_url('assets/') ?>vendor/jquery/jquery.min.js"></script>
-    <script src="<?php echo base_url('assets/') ?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- Core plugin JavaScript-->
-    <script src="<?php echo base_url('assets/') ?>vendor/jquery-easing/jquery.easing.min.js"></script>
-    <script src="<?php echo base_url('assets/')?>assets/mail/jqBootstrapValidation.js"></script>
-    <script src="<?php echo base_url('assets/')?>assets/mail/contact_me.js"></script>
-    <!-- Core theme JS-->
-    <script src="<?php echo base_url('assets/')?>js/scripts.js"></script>
+</div>
+<!-- End Of Whatsapp Icon -->
+<!-- Contact form JS-->
+<script src="<?php echo base_url('assets/') ?>vendor/jquery/jquery.min.js"></script>
+<script src="<?php echo base_url('assets/') ?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Core plugin JavaScript-->
+<script src="<?php echo base_url('assets/') ?>vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="<?php echo base_url('assets/')?>assets/mail/jqBootstrapValidation.js"></script>
+<script src="<?php echo base_url('assets/')?>assets/mail/contact_me.js"></script>
+<!-- Core theme JS-->
+<script src="<?php echo base_url('assets/')?>js/scripts.js"></script>
+<script>
+    $('.satu').on('click',function(){
+    </script>
     <script>
-        $('.satu').on('click',function(){
-        </script>
-        <script>
 
 
-            $(document).ready(function(){
-                load_data();
-                function load_data(pesan)
-                {
-                    $(".isipesan").val('');
-                    $.ajax({
-                        method:"POST",
-                        url:"<?php echo base_url('Pesan/tampil_pesan')?>",
-                        data: {pesan:pesan},
-                        success:function(hasil)
-                        {
-                            $('.isi').html(hasil);
-                        }
-                    });
-                }
-                
-                $('.send').click(function(){
-                    var pesan = $(".isipesan").val();
-                    load_data(pesan);
-                });
-                $('.isipesan').keypress(function(e) {
-                    if(e.which == 13) {
-                        var pesan = $(".isipesan").val();
-                        load_data(pesan);
-                    }
-                });
-            });
-
-
-            $(function(){
-setInterval(isi, 1000);//fungsi yang dijalan setiap detik, 1000 = 1 detik
-});
-            function isi() {
+        $(document).ready(function(){
+            load_data();
+            function load_data(pesan)
+            {
+                $(".isipesan").val('');
                 $.ajax({
-                    url: '<?php echo base_url('pesan/tampil_pesan')?>',
-                    success: function(data) {
-                        $('.isi').html(data);
-                    },
+                    method:"POST",
+                    url:"<?php echo base_url('Pesan/tampil_pesan')?>",
+                    data: {pesan:pesan},
+                    success:function(hasil)
+                    {
+                        $('.isi').html(hasil);
+                    }
                 });
             }
 
-        </script>
-    </body>
-    </html>
+            $('.send').click(function(){
+                var pesan = $(".isipesan").val();
+                load_data(pesan);
+            });
+            $('.isipesan').keypress(function(e) {
+                if(e.which == 13) {
+                    var pesan = $(".isipesan").val();
+                    load_data(pesan);
+                }
+            });
+        });
+
+
+        $(function(){
+setInterval(isi, 1000);//fungsi yang dijalan setiap detik, 1000 = 1 detik
+});
+        function isi() {
+            $.ajax({
+                url: '<?php echo base_url('pesan/tampil_pesan')?>',
+                success: function(data) {
+                    $('.isi').html(data);
+                },
+            });
+        }
+
+    </script>
+</body>
+</html>
