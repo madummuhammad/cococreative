@@ -12,8 +12,12 @@ class Berita extends CI_Controller {
 
     public function index()
     {
+        $data['berita_sorotan']=$this->M_Berita->tampil_sorotan_berita();
+        $data['berita_terbaru']=$this->M_Berita->tampil_berita_terbaru();
+        $data['berita_lain']=$this->M_Berita->tampil_berita_lain();
         $this->load->view('news/partial/header');
-        $this->load->view('news/v_news');
+        $this->load->view('news/partial/mainHeader');
+        $this->load->view('news/v_news',$data);
         $this->load->view('news/partial/footer');
     }
 }

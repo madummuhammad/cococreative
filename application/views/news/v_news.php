@@ -1,64 +1,3 @@
-
-	<div class="container-scroller">
-		<div class="main-panel">
-			<header id="header" class="pt-2 bg-warning">
-				<div class="container">
-					<nav class="navbar navbar-expand-lg navbar-light">
-						<div class="navbar-bottom">
-							<div class="d-flex justify-content-between align-items-center">
-								<div>
-									<a class="" href="<?php echo base_url('testimonial') ?>"
-										><img class="rounded-circle nav-brand" src="<?php echo base_url('assets/assets/img/brand.png') ?>" alt=""
-										/><h1 class="navbar-brand p-2">Cococreative News</h1></a>
-
-									</div>
-									<div>
-										<button
-										class="navbar-toggler"
-										type="button"
-										data-target="#navbarSupportedContent"
-										aria-controls="navbarSupportedContent"
-										aria-expanded="false"
-										aria-label="Toggle navigation"
-										>
-										<span class="navbar-toggler-icon"></span>
-									</button>
-									<div
-									class="navbar-collapse justify-content-center collapse"
-									id="navbarSupportedContent"
-									>
-									<ul
-									class="navbar-nav d-lg-flex justify-content-between align-items-center"
-									>
-									<li>
-										<button class="navbar-close">
-											<i class="mdi mdi-close"></i>
-										</button>
-									</li>
-									<li class="nav-item active">
-										<a class="nav-link" href="<?php echo base_url() ?>">HOME</a>
-									</li>
-									<li class="nav-item">
-										<a class="nav-link" href="<?php echo base_url('about') ?>">ABOUT</a>
-									</li>
-									<li class="nav-item">
-										<a class="nav-link" href="<?php echo base_url('berita') ?>">NEWS</a>
-									</li>
-									<li class="nav-item">
-										<a class="nav-link" href="<?php echo base_url('produk') ?>">PRODUCT</a>
-									</li>
-									<li class="nav-item">
-										<a class="nav-link" href="">LANGUAGE</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</nav>
-		</div>
-	</header>
-
 	<!-- partial -->
 <!-- <div class="flash-news-banner">
 	<div class="container">
@@ -82,19 +21,12 @@
 		<div class="row" data-aos="fade-up">
 			<div class="col-xl-8 stretch-card grid-margin">
 				<div class="position-relative">
-					<img
-					src="<?php echo base_url('assets')?>/assets_berita/images/dashboard/banner.jpg"
-					alt="banner"
-					class="img-fluid"
+					<img src="<?php echo base_url('main')?>/assets/assets/img/upload/berita/<?php echo $berita_sorotan['gambar'] ?>" alt="banner" class="img-fluid"
 					/>
+					<!-- 1450 x 820 minimal -->
 					<div class="banner-content">
-						<div class="badge badge-danger fs-12 font-weight-bold mb-3">
-							global news
-						</div>
-						<h1 class="mb-0">GLOBAL PANDEMIC</h1>
 						<h1 class="mb-2">
-							Coronavirus Outbreak LIVE Updates: ICSE, CBSE Exams
-							Postponed, 168 Trains
+							<?php echo $berita_sorotan['judul'] ?>
 						</h1>
 						<div class="fs-12">
 							<span class="mr-2">Photo </span>10 Minutes ago
@@ -105,66 +37,29 @@
 			<div class="col-xl-4 stretch-card grid-margin">
 				<div class="card bg-dark text-white">
 					<div class="card-body">
-						<h2>Latest news</h2>
-
-						<div
-						class="d-flex border-bottom-blue pt-3 pb-4 align-items-center justify-content-between"
-						>
-						<div class="pr-3">
-							<h5>Virus Kills Member Of Advising Iran’s Supreme</h5>
-							<div class="fs-12">
-								<span class="mr-2">Photo </span>10 Minutes ago
+						<h2>Berita Terbaru</h2>
+						<?php foreach ($berita_terbaru as $row => $value): ?>
+							<div class="d-flex border-bottom-blue pt-3 pb-4 align-items-center justify-content-between">
+								<div class="pr-3">
+									<h5><?php echo $value['judul'] ?></h5>
+									<div class="fs-12">
+										<span class="mr-2">Photo </span>10 Minutes ago
+									</div>
+								</div>
+								<div class="rotate-img">
+									<img
+									src="<?php echo base_url('main')?>/assets/assets/img/upload/berita/<?php echo $value['gambar'] ?>"
+									alt="thumb"
+									class="img-fluid img-lg"
+									/>
+								</div>
 							</div>
-						</div>
-						<div class="rotate-img">
-							<img
-							src="<?php echo base_url('assets')?>/assets_berita/images/dashboard/home_1.jpg"
-							alt="thumb"
-							class="img-fluid img-lg"
-							/>
-						</div>
+						<?php endforeach ?>
 					</div>
-
-					<div
-					class="d-flex border-bottom-blue pb-4 pt-4 align-items-center justify-content-between"
-					>
-					<div class="pr-3">
-						<h5>Virus Kills Member Of Advising Iran’s Supreme</h5>
-						<div class="fs-12">
-							<span class="mr-2">Photo </span>10 Minutes ago
-						</div>
-					</div>
-					<div class="rotate-img">
-						<img
-						src="<?php echo base_url('assets')?>/assets_berita/images/dashboard/home_2.jpg"
-						alt="thumb"
-						class="img-fluid img-lg"
-						/>
-					</div>
-				</div>
-
-				<div
-				class="d-flex pt-4 align-items-center justify-content-between"
-				>
-				<div class="pr-3">
-					<h5>Virus Kills Member Of Advising Iran’s Supreme</h5>
-					<div class="fs-12">
-						<span class="mr-2">Photo </span>10 Minutes ago
-					</div>
-				</div>
-				<div class="rotate-img">
-					<img
-					src="<?php echo base_url('assets')?>/assets_berita/images/dashboard/home_3.jpg"
-					alt="thumb"
-					class="img-fluid img-lg"
-					/>
 				</div>
 			</div>
 		</div>
-	</div>
-</div>
-</div>
-<div class="row" data-aos="fade-up">
+		<div class="row" data-aos="fade-up">
 <!-- 	<div class="col-lg-3 stretch-card grid-margin">
 		<div class="card">
 			<div class="card-body">
@@ -189,104 +84,37 @@
 	<div class="col-lg stretch-card grid-margin">
 		<div class="card">
 			<div class="card-body">
-				<div class="row">
-					<div class="col-sm-4 grid-margin">
-						<div class="position-relative">
-							<div class="rotate-img">
-								<img
-								src="<?php echo base_url('assets')?>/assets_berita/images/dashboard/home_4.jpg"
-								alt="thumb"
-								class="img-fluid"
-								/>
-							</div>
-							<div class="badge-positioned">
-								<span class="badge badge-danger font-weight-bold"
-								>Flash news</span
-								>
+				<?php foreach ($berita_lain as $row => $value): ?>
+					<div class="row">
+						<div class="col-sm-4 grid-margin">
+							<div class="position-relative">
+								<div class="rotate-img">
+									<img
+									src="<?php echo base_url('assets')?>/assets_berita/images/dashboard/home_4.jpg"
+									alt="thumb"
+									class="img-fluid"
+									/>
+								</div>
 							</div>
 						</div>
-					</div>
-					<div class="col-sm-8  grid-margin">
-						<h2 class="mb-2 font-weight-600">
-							South Korea’s Moon Jae-in sworn in vowing to address
-							North
-						</h2>
-						<div class="fs-13 mb-2">
-							<span class="mr-2">Photo </span>10 Minutes ago
-						</div>
-						<p class="mb-0">
-							Lorem Ipsum has been the industry's standard dummy
-							text ever since the 1500s, when an
-						</p>
-					</div>
-				</div>
-
-				<div class="row">
-					<div class="col-sm-4 grid-margin">
-						<div class="position-relative">
-							<div class="rotate-img">
-								<img
-								src="<?php echo base_url('assets')?>/assets_berita/images/dashboard/home_5.jpg"
-								alt="thumb"
-								class="img-fluid"
-								/>
+						<div class="col-sm-8  grid-margin">
+							<h2 class="mb-2 font-weight-600">
+								<?php echo $value['judul'] ?>
+							</h2>
+							<div class="fs-13 mb-2">
+								<span class="mr-2">Photo </span>10 Minutes ago
 							</div>
-							<div class="badge-positioned">
-								<span class="badge badge-danger font-weight-bold"
-								>Flash news</span
-								>
-							</div>
+							<p class="mb-0">
+								<?php echo $value['isi'] ?>
+							</p>
 						</div>
 					</div>
-					<div class="col-sm-8  grid-margin">
-						<h2 class="mb-2 font-weight-600">
-							No charges over 2017 Conservative battle bus cases
-						</h2>
-						<div class="fs-13 mb-2">
-							<span class="mr-2">Photo </span>10 Minutes ago
-						</div>
-						<p class="mb-0">
-							Lorem Ipsum has been the industry's standard dummy
-							text ever since the 1500s, when an
-						</p>
-					</div>
-				</div>
-
-				<div class="row">
-					<div class="col-sm-4">
-						<div class="position-relative">
-							<div class="rotate-img">
-								<img
-								src="<?php echo base_url('assets')?>/assets_berita/images/dashboard/home_6.jpg"
-								alt="thumb"
-								class="img-fluid"
-								/>
-							</div>
-							<div class="badge-positioned">
-								<span class="badge badge-danger font-weight-bold"
-								>Flash news</span
-								>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-8">
-						<h2 class="mb-2 font-weight-600">
-							Kaine: Trump Jr. may have committed treason
-						</h2>
-						<div class="fs-13 mb-2">
-							<span class="mr-2">Photo </span>10 Minutes ago
-						</div>
-						<p class="mb-0">
-							Lorem Ipsum has been the industry's standard dummy
-							text ever since the 1500s, when an
-						</p>
-					</div>
-				</div>
+				<?php endforeach ?>
 			</div>
 		</div>
 	</div>
 </div>
-<div class="row" data-aos="fade-up">
+<!-- <div class="row" data-aos="fade-up">
 	<div class="col-sm-12 grid-margin">
 		<div class="card">
 			<div class="card-body">
@@ -492,7 +320,7 @@ class="d-flex justify-content-between align-items-center pt-3"
 </div>
 </div>
 </div>
-</div>
+</div> -->
 <!-- <div class="row" data-aos="fade-up">
 	<div class="col-sm-12">
 		<div class="card">
