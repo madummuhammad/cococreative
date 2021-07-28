@@ -139,7 +139,7 @@
                                     <?php endforeach ?>
                                     <hr class="dropdown-divider">
                                     <?php foreach ($this->session->userdata('dataorder') as $row => $value): ?>
-                                        <a href="https://wa.me/send?phone=62852990076364&text=Hallo%20Admin%20Cococreative%0ASaya%20ingin%20membeli%20produk%20berikut:
+                                        <a href="https://wa.me/send?phone=6285290076364&text=Hallo%20Admin%20Cococreative%0ASaya%20ingin%20membeli%20produk%20berikut:
                                         <?php foreach ($this->session->userdata('dataorder') as $row =>$value){ ?>
                                             %0ANama%20Produk:%20<?php echo $value['product'] ?>
                                             %0ATotal%20Pembelian:%20<?php echo $value['size'] ?>

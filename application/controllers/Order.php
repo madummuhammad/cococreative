@@ -23,7 +23,7 @@ class Order extends CI_Controller {
 		$this->form_validation->set_rules('size','Size','trim|required');
 		$this->form_validation->set_rules('qty','Qty','trim|required');
 		if ($this->form_validation->run()==false) {
-			redirect('asdfasdf');
+			redirect('produk');
 			// $this->session->set_flashdata('failed',$product);
 			// $this->load->view('company_profile/partial/header');
 			// $this->load->view('company_profile/partial/preloader');
