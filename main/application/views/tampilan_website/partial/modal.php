@@ -494,7 +494,7 @@
 		<div class="modal-dialog modal-lg" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title text-dark" id="exampleModalLabel">Ganti Carousel</h5>
+					<h5 class="modal-title text-dark" id="exampleModalLabel">Ganti Testimonial</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
@@ -514,6 +514,125 @@
 									<div class="form-group mt-2">
 										<label for="exampleFormControlTextarea1">Isi</label>
 										<textarea class="form-control" id="exampleFormControlTextarea1" rows="8" placeholder="Masukan Judul" name="isi"><?php echo $value['isi'] ?></textarea>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+						<button type="submit" class="btn btn-primary" clicked>Simpan Edit</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+<?php endforeach ?>
+<!-- End Of Edit Testimonial -->
+
+<!-- Edit footer deskripsi -->
+<div class="modal fade" id="footdes<?php echo $footer_deskripsi['id_footer_deskripsi'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-xl" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title text-dark" id="exampleModalLabel">Edit Deskripsi Footer</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<form method="POST" action="<?php echo base_url('website/edit_deskripsi_footer') ?>" enctype="multipart/form-data">
+				<div class="modal-body">
+					<div class="row">
+						<div class="col">
+							<div class="form-group text-dark">
+								<h5>Bahasa Indonesia</h5>
+								<div class="form-group mt-2">
+									<label for="exampleFormControlTextarea1">Isi Deskripsi Footer</label>
+									<textarea class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="Masukan Deskripsi Bahasa Indonesia" name="isi"><?php echo $footer_deskripsi['isi'] ?></textarea>
+								</div>
+							</div>
+						</div>
+						<div class="col">
+							<div class="form-group text-dark">
+								<h5>Bahasa Inggris</h5>
+								<div class="form-group mt-2">
+									<label for="exampleFormControlTextarea1">Isi Deskripsi Footer</label>
+									<textarea class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="Masukan Deskripsi Dalam Bahasa Inggris" name="isi_eng"><?php echo $footer_deskripsi['isi_eng'] ?></textarea>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+					<button type="submit" class="btn btn-primary" clicked>Simpan Perubahan</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<!-- Modal Tambah Logo Bisnis Footer -->
+<div class="modal fade" id="logobisnisfooter" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-md" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title text-dark" id="exampleModalLabel">Ganti Logo Bisnis Footer</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<form method="POST" action="<?php echo base_url('website/tambah_logo_bisnis_footer') ?>" enctype="multipart/form-data">
+				<div class="modal-body">
+					<div class="row">
+						<div class="col">
+							<div class="form-group text-dark">
+								<label for="exampleFormControlFile1">Masukan Gambar Baru</label>
+								<input type="file" class="form-control-file" id="exampleFormControlFile1" name="gambar">
+								<div class="form-group mt-2">
+									<label for="exampleFormControlTextarea1">Link</label>
+									<input type="text" class="form-control" name="link">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+					<button type="submit" class="btn btn-primary" clicked>Simpan</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<!-- End Of Tambah Testimonial -->
+
+<!-- Modal Edit Logo Bisnis Footer -->
+<?php foreach ($this->M_Website->tampil_logo_bisnis_footer() as $row => $value): ?>
+	<div class="modal fade" id="logobisnisfooter<?php echo $value['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-xl" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title text-dark" id="exampleModalLabel">Ganti Logo Bisnis Footer</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<form method="POST" action="<?php echo base_url('website/edit_logo_bisnis_footer') ?>" enctype="multipart/form-data">
+					<div class="modal-body">
+						<div class="row">
+							<div class="col">
+								<img class="gambar-edit-carousel" src="<?php echo base_url('assets/assets/img/logos/')?><?php echo $value['gambar'] ?>" alt="">
+							</div>
+							<div class="col">
+								<div class="form-group text-dark">
+									<label for="exampleFormControlFile1">Masukan Gambar Baru</label>
+									<input type="text" name="id" value="<?php echo $value['id'] ?>" hidden>
+									<input type="text" name="gambar_lama" value="<?php echo $value['gambar'] ?>" hidden>
+									<input type="file" class="form-control-file" id="exampleFormControlFile1" name="gambar">
+									<div class="form-group mt-2">
+										<label for="exampleFormControlTextarea1">Link</label>
+										<input type="text" class="form-control" name="link" value="<?php echo $value['link'] ?>">
 									</div>
 								</div>
 							</div>

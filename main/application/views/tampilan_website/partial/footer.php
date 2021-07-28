@@ -1,54 +1,107 @@
 <?php if (get_cookie('lang_is')=== 'en'): ?>
-<section class="page-section" id="contact">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6">
-                <h4 class="text-white">
-                <?php echo SITE_NAME ?>
-                </h4>
-                <p class="text-muted text-white">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing, elit. Error libero, nihil. Perferendis quam quibusdam velit. Veritatis aut dolorem est culpa praesentium, ea pariatur aliquam unde odio molestias iusto asperiores quam.
-                </p>
-            </div>
-            <div class="col-lg-6">
-                <h4 class="text-white">
-                BUSSINESS WITH US
-                </h4>
-                <div class="d-flex flex-column">
+    <section class="page-section" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h4 class="text-white">
+                        <?php echo SITE_NAME ?>
+                    </h4>
+                    <p class="text-muted text-white">
+                        <?php echo $footer_deskripsi['isi_eng'] ?><!-- Edit -->
+                        <a type="button" class="btn btn-info" data-toggle="modal" data-target="#footdes<?php echo $footer_deskripsi['id_footer_deskripsi'] ?>"><i class="fas fa-edit"></i></a>
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <h4 class="text-white">
+                        BUSSINESS WITH US
+                    </h4>
+                    <div class="d-flex flex-column">
                     <!--                             <a href="#" class="text-link">
                     Contact Us </a> -->
-                    <a href="https://www.tokopedia.com/cococreative"><img class="icon-e-commerce" src="<?php echo base_url('assets/assets/img/logos/logo_tokopedia.svg') ?>"></a>
-                    <a href="https://shopee.co.id/firmanyusuf13"><img class="icon-e-commerce" src="<?php echo base_url('assets/assets/img/logos/logo_shopee.svg') ?>"></a>
-                </div>
-            </div>
-        </div>
-    </div>
+                    <?php foreach ($this->M_Website->tampil_logo_bisnis_footer() as $row => $value): ?>
+                        <a href="<?php echo $value['link'] ?>"><img class="icon-e-commerce" src="<?php echo base_url('assets/assets/img/logos/')?><?php echo $value['gambar'] ?>"></a>
+                        <div class="btn btn-group w-25" role="group" aria-label="Basic example">
+                            <a type="button" class="btn btn-info" data-toggle="modal" data-target="#logobisnisfooter<?php echo $value['id'] ?>"><i class="fas fa-edit"></i></a>
+                            <a type="button" class="btn btn-danger" data-toggle="modal" data-target="#hapuslogobisnisfooter<?php echo $value['id'] ?>"><i class="fas fa-trash"></i></a>
+                            <div class="modal fade text-dark" id="hapuslogobisnisfooter<?php echo $value['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h5 class="modal-title" id="exampleModalLabel">Yakin mau menghapus?</h5>
+                                      <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">Pilih Hapus untuk menghapus.</div>
+                                <div class="modal-footer">
+                                  <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                                  <a class="btn btn-primary" href="<?php echo base_url('website/hapus_logo_bisnis_footer/'.$value['id']) ?>">Hapus</a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+          <?php endforeach ?>
+      </div>
+  </div>
+</div>
+</div>
 </section>
 <?php else: ?>
-<section class="page-section" id="contact">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6">
-                <h4 class="text-white">
-                <?php echo SITE_NAME ?>
-                </h4>
-                <p class="text-muted text-white">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing, elit. Error libero, nihil. Perferendis quam quibusdam velit. Veritatis aut dolorem est culpa praesentium, ea pariatur aliquam unde odio molestias iusto asperiores quam.
-                </p>
-            </div>
-            <div class="col-lg-6">
-                <h4 class="text-white">
-                BISNIS DENGAN KAMI
-                </h4>
-                <div class="d-flex flex-column">
+    <section class="page-section" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h4 class="text-white">
+                        <?php echo SITE_NAME ?>
+                    </h4>
+                    <p class="text-muted text-white">
+                        <?php echo $footer_deskripsi['isi'] ?><!-- Edit -->
+                        <a type="button" class="btn btn-info" data-toggle="modal" data-target="#footdes<?php echo $footer_deskripsi['id_footer_deskripsi'] ?>"><i class="fas fa-edit"></i></a>
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <h4 class="text-white">
+                        BISNIS DENGAN KAMI
+                    </h4>
+                    <div class="d-flex flex-column">
                     <!--                             <a href="#" class="text-link">
                     Contact Us </a> -->
-                    <a href="https://www.tokopedia.com/cococreative"><img class="icon-e-commerce" src="<?php echo base_url('assets/assets/img/logos/logo_tokopedia.svg') ?>"></a>
-                    <a href="https://shopee.co.id/firmanyusuf13"><img class="icon-e-commerce" src="<?php echo base_url('assets/assets/img/logos/logo_shopee.svg') ?>"></a>
-                </div>
-            </div>
-        </div>
-    </div>
+                    <?php foreach ($this->M_Website->tampil_logo_bisnis_footer() as $row => $value): ?>
+                        <a href="<?php echo $value['link'] ?>"><img class="icon-e-commerce" src="<?php echo base_url('assets/assets/img/logos/')?><?php echo $value['gambar'] ?>"></a>
+                        <div class="btn btn-group w-25" role="group" aria-label="Basic example">
+                            <a type="button" class="btn btn-info" data-toggle="modal" data-target="#logobisnisfooter<?php echo $value['id'] ?>"><i class="fas fa-edit"></i></a>
+                            <a type="button" class="btn btn-danger" data-toggle="modal" data-target="#hapuslogobisnisfooter<?php echo $value['id'] ?>"><i class="fas fa-trash"></i></a>
+                            <div class="modal fade text-dark" id="hapuslogobisnisfooter<?php echo $value['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h5 class="modal-title" id="exampleModalLabel">Yakin mau menghapus?</h5>
+                                      <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">Pilih Hapus untuk menghapus.</div>
+                                <div class="modal-footer">
+                                  <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                                  <a class="btn btn-primary" href="<?php echo base_url('website/hapus_logo_bisnis_footer/'.$value['id']) ?>">Hapus</a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+          <?php endforeach ?>
+
+
+      </div>
+      <a type="button" class="btn btn-info mt-5" data-toggle="modal" data-target="#logobisnisfooter"><i class="fas fa-plus"></i> Tambah Logo Bisnis</a>
+  </div>
+</div>
+</div>
 </section>
 <?php endif ?>
 <!-- End Of Contact -->

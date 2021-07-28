@@ -76,4 +76,18 @@ class M_Website extends CI_Model {
 		}
 		return $result;
 	}
+	// Tampil Footer Deskripsi
+	public function tampil_footer_deskripsi()
+	{
+		$this->db->join('footer_deskripsi_eng','footer_deskripsi.id_footer_deskripsi=footer_deskripsi_eng.id_footer_deskripsi');
+		$result=$this->db->get('footer_deskripsi')->row_array();
+		return $result;
+	}
+
+	public function tampil_logo_bisnis_footer()
+	{
+		$result=$this->db->get('logo_bisnis_footer')->result_array();
+		return $result;
+	}
+// 
 }
