@@ -24,6 +24,13 @@ class M_Berita extends CI_Model {
 		$result=$this->db->get('news')->result_array();
 		return $result;
 	}
+
+	public function tampil_isi_berita($id)
+	{
+		$this->db->where('id_news',$id);
+		$result=$this->db->get('news')->row_array();
+		return $result;
+	}
 	
 
 }

@@ -1,68 +1,71 @@
 	<!-- partial -->
-<div class="flash-news-banner">
-	<div class="container">
-		<div class="d-lg-flex align-items-center justify-content-between">
-			<div class="d-flex align-items-center">
-				<span class="badge badge-dark mr-3">Berita Terbaru</span>
-				<p class="mb-0">
-					Lorem Ipsum has been the industry's standard dummy text ever
-					since the 1500s.
-				</p>
-			</div>
-			<div class="d-flex">
-				<span class="mr-3 text-danger">Sekarang, <?php echo date('l d M Y') ?></span>
+	<div class="flash-news-banner">
+		<div class="container">
+			<div class="d-lg-flex align-items-center justify-content-between">
+				<div class="d-flex align-items-center">
+					<span class="badge badge-dark mr-3">Berita Terbaru</span>
+					<p class="mb-0">
+						Lorem Ipsum has been the industry's standard dummy text ever
+						since the 1500s.
+					</p>
+				</div>
+				<div class="d-flex">
+					<span class="mr-3 text-danger">Sekarang, <?php echo date('l d M Y') ?></span>
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
 
-<div class="content-wrapper">
-	<div class="container pt-5">
-		<div class="row" data-aos="fade-up">
-			<div class="col-xl-8 stretch-card grid-margin">
-				<a href="<?php echo base_url('berita/cococreative_news/') ?><?php echo $berita_sorotan['id_news'] ?>">
+	<div class="content-wrapper bg-white">
+		<div class="container pt-5">
+			<div class="row pt-5 mt-5" data-aos="fade-up">
+				<div class="col-xl-8 stretch-card grid-margin">
+					<div class="banner-content">
+						<h1 class="mb-2 text-dark text-justify text-uppercase">
+							<?php echo $berita_sorotan['judul'] ?>
+						</h1>
+						<div class="fs-12">
+							<span class="mr-2">Photo </span>10 Minutes ago
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row" data-aos="fade-up">
+				<div class="col-xl-8 stretch-card grid-margin">
+
 					<div class="position-relative bg-dark">
 						<img src="<?php echo base_url('main')?>/assets/assets/img/upload/berita/<?php echo $berita_sorotan['gambar'] ?>" alt="banner" class="img-fluid"
 						/>
 						<!-- 1450 x 820 minimal -->
-						<div class="banner-content">
-							<h1 class="mb-2 text-warning shadow-lg">
-								<a href="<?php echo base_url('berita/cococreative_news') ?>" class="text-white shadow-lg pt-5 rounded-lg"><?php echo $berita_sorotan['judul'] ?></a>
-							</h1>
-							<div class="fs-12">
-								<span class="mr-2">Photo </span>10 Minutes ago
-							</div>
-						</div>
 					</div>
-				</a>
 
-			</div>
-			<div class="col-xl-4 stretch-card grid-margin">
-				<div class="card bg-dark text-white">
-					<div class="card-body">
-						<h2>Berita Terbaru</h2>
-						<?php foreach ($berita_terbaru as $row => $value): ?>
-							<div class="d-flex border-bottom-blue pt-3 pb-4 align-items-center justify-content-between">
-								<div class="pr-3">
-									<h5><?php echo $value['judul'] ?></h5>
-									<div class="fs-12">
-										<span class="mr-2">Photo </span>10 Minutes ago
+				</div>
+				<div class="col-xl-4 stretch-card grid-margin">
+					<div class="card bg-dark text-white">
+						<div class="card-body">
+							<h2>Berita Terbaru</h2>
+							<?php foreach ($berita_terbaru as $row => $value): ?>
+								<div class="d-flex border-bottom-blue pt-3 pb-4 align-items-center justify-content-between">
+									<div class="pr-3">
+										<h5><?php echo $value['judul'] ?></h5>
+										<div class="fs-12">
+											<span class="mr-2">Photo </span>10 Minutes ago
+										</div>
+									</div>
+									<div class="rotate-img">
+										<img
+										src="<?php echo base_url('main')?>/assets/assets/img/upload/berita/<?php echo $value['gambar'] ?>"
+										alt="thumb"
+										class="img-fluid img-lg"
+										/>
 									</div>
 								</div>
-								<div class="rotate-img">
-									<img
-									src="<?php echo base_url('main')?>/assets/assets/img/upload/berita/<?php echo $value['gambar'] ?>"
-									alt="thumb"
-									class="img-fluid img-lg"
-									/>
-								</div>
-							</div>
-						<?php endforeach ?>
+							<?php endforeach ?>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		<div class="row" data-aos="fade-up">
+			<div class="row" data-aos="fade-up">
 <!-- 	<div class="col-lg-3 stretch-card grid-margin">
 		<div class="card">
 			<div class="card-body">
@@ -84,35 +87,16 @@
 			</div>
 		</div>
 	</div> -->
-	<div class="col-lg stretch-card grid-margin">
+	<div class="col-lg-8 stretch-card grid-margin">
 		<div class="card">
 			<div class="card-body">
-				<?php foreach ($berita_lain as $row => $value): ?>
 					<div class="row">
-						<div class="col-sm-4 grid-margin">
-							<div class="position-relative">
-								<div class="rotate-img">
-									<img
-									src="<?php echo base_url('main')?>/assets/assets/img/upload/berita/<?php echo $value['gambar'] ?>"
-									alt="thumb"
-									class="img-fluid"
-									/>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-8  grid-margin">
-							<h2 class="mb-2 font-weight-600">
-								<?php echo $value['judul'] ?>
-							</h2>
-							<div class="fs-13 mb-2">
-								<span class="mr-2">Photo </span>10 Minutes ago
-							</div>
+						<div class="col-sm-12  grid-margin">
 							<p class="mb-0">
-								<?php echo $value['isi'] ?>
+								<?php echo $isi_berita['isi'] ?>
 							</p>
 						</div>
 					</div>
-				<?php endforeach ?>
 			</div>
 		</div>
 	</div>

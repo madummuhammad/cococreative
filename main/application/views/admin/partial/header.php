@@ -21,9 +21,10 @@
     <link href="<?php echo base_url('assets/assets2/') ?>css/sb-admin-2.min.css" rel="stylesheet">
     <link href="<?php echo base_url('assets/assets2/') ?>css/style-admin.css" rel="stylesheet">
     <link href="<?php echo base_url('assets/assets2/') ?>vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <script src="//cdn.ckeditor.com/4.16.1/full/ckeditor.js"></script>
 
 </head>
 
 <body id="page-top">
- <!-- Page Wrapper -->
- <div id="wrapper">
+   <!-- Page Wrapper -->
+   <div id="wrapper">
