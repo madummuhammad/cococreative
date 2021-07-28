@@ -18,7 +18,7 @@
                         <?php endif ?>" href="<?php echo base_url('about') ?>">Tentang</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger <?php if ($this->uri->segment(1)=='news'): ?>
                         <?php echo 'active' ?>
-                        <?php endif ?>" href="<?php echo base_url('testimonial') ?>">Berita</a></li>
+                        <?php endif ?>" href="<?php echo base_url('berita') ?>">Berita</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger <?php if ($this->uri->segment(1)=='product'): ?>
                         <?php echo 'active' ?>
                         <?php endif ?>" href="<?php echo base_url('produk') ?>">Produk</a></li>
@@ -100,7 +100,7 @@
                         <?php endif ?>" href="<?php echo base_url('about') ?>">About</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger <?php if ($this->uri->segment(1)=='testimonial'): ?>
                         <?php echo 'active' ?>
-                        <?php endif ?>" href="<?php echo base_url('testimonial') ?>">News</a></li>
+                        <?php endif ?>" href="<?php echo base_url('berita') ?>">News</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger <?php if ($this->uri->segment(1)=='produk'): ?>
                         <?php echo 'active' ?>
                         <?php endif ?>" href="<?php echo base_url('produk') ?>">Product</a></li>

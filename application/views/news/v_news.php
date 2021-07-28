@@ -42,7 +42,7 @@
 										<a class="nav-link" href="<?php echo base_url('about') ?>">ABOUT</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="<?php echo base_url('testimonial') ?>">NEWS</a>
+										<a class="nav-link" href="<?php echo base_url('berita') ?>">NEWS</a>
 									</li>
 									<li class="nav-item">
 										<a class="nav-link" href="<?php echo base_url('produk') ?>">PRODUCT</a>
