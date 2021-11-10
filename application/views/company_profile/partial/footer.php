@@ -1,215 +1,139 @@
-<?php if (get_cookie('lang_is')=== 'en'): ?>
-    <section class="page-section" id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <h4 class="text-white">
-                        <?php echo SITE_NAME ?>
-                    </h4>
-                    <p class="text-muted text-white">
-                        <?php echo $this->M_Website->tampil_footer_deskripsi()['isi_eng'] ?>
-                    </p>
-                </div>
-                <div class="col-lg-6">
-                    <h4 class="text-white">
-                        BUSSINESS WITH US
-                    </h4>
-                    <div class="d-flex flex-column">
-                    <!--                             <a href="#" class="text-link">
-                    Contact Us </a> -->
-                    <?php foreach ($this->M_Website->tampil_logo_bisnis_footer() as $row => $value): ?>
-                        <a href="<?php echo $value['link'] ?>"><img class="icon-e-commerce" src="<?php echo base_url('main/assets/assets/img/logos/')?><?php echo $value['gambar'] ?>"></a>
-                    <?php endforeach ?>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<?php else: ?>
-    <section class="page-section" id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <h4 class="text-white">
-                        <?php echo SITE_NAME ?>
-                    </h4>
-                    <p class="text-muted text-white">
-                        <?php echo $this->M_Website->tampil_footer_deskripsi()['isi'] ?>
-                    </p>
-                </div>
-                <div class="col-lg-6">
-                    <h4 class="text-white">
-                        BISNIS DENGAN KAMI
-                    </h4>
-                    <div class="d-flex flex-column">
-                    <!--                             <a href="#" class="text-link">
-                    Contact Us </a> -->
-                    <?php foreach ($this->M_Website->tampil_logo_bisnis_footer() as $row => $value): ?>
-                        <a href="<?php echo $value['link'] ?>"><img class="icon-e-commerce" src="<?php echo base_url('main/assets/assets/img/logos/')?><?php echo $value['gambar'] ?>"></a>
-                    <?php endforeach ?>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<?php endif ?>
-<!-- End Of Contact -->
-<!-- Footer-->
-<!-- Footer-->
-<footer class="footer">
+<footer id="footer" class="footer bg-overlay">
+  <div class="footer-main">
     <div class="container">
-        <div class="row align-items-center py-3">
-            <div class="col-lg-4 text-lg-left text-dark">Copyright © <?php echo SITE_NAME ?> 2020</div>
-            <div class="col-lg-4 my-3 my-lg-0">
-                <!--                         <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a> -->
-                <a class="btn btn-dark btn-social mx-2" href="https://web.facebook.com/cococreative.id"><i class="fab fa-facebook-f"></i></a>
-                <a class="btn btn-dark btn-social mx-2" href="https://www.linkedin.com/in/firman-yusuf-989a9a203/"><i class="fab fa-linkedin-in"></i></a>
-                <a class="btn btn-dark btn-social mx-2" href="https://www.instagram.com/cococreative.id/"><i class="fab fa-instagram"></i></a>
-                <a class="btn btn-dark btn-social mx-2" href=""><i class="fas fa-envelope"></i></a>
+      <h3 class="text-white text-center">Let Get in Touch</h3>
+      <div class="row d-flex justify-content-center">
+        <div class="col-lg-6 col-md-6 footer-widget footer-about">
+          <div class="footer-top mb-4">
+            <!-- <img loading="lazy" class="footer-logo" src="images/footer-logo.png" alt="Constra"> -->
+            <h4 class="text-white">CV. Coco Creative</h4>
+            <?php if (get_cookie('lang_is')=== 'en'): ?>
+              <p><?php echo $this->M_Website->tampil_footer_deskripsi()['isi_eng'] ?></p>
+            <?php else: ?>
+              <p><?php echo $this->M_Website->tampil_footer_deskripsi()['isi'] ?></p>
+            <?php endif ?>
+            <div class="footer-divider mt-2"></div>
+          </div>
+          <div class="footer-bottom">
+            <?php if (get_cookie('lang_is')=='in'): ?>
+              <h4 class="text-white">Kontak Kami</h4>
+            <?php else: ?>
+              <h4 class="text-white">Contact Us</h4>
+            <?php endif ?>
+            <p>Email: admin@cococreative-indonesia.com</p>
+            <p>Phone: +62-852-9007-6364</p>
+            <P>Address: Cilacap, Jawa Tengah, Indonesia</P>
+          </div>
+        </div><!-- Col end -->
+        <div class="col-lg-6 col-md-6 footer-widget footer-about">
+          <div class="footer-top mb-4">
+            <!-- <img loading="lazy" class="footer-logo" src="images/footer-logo.png" alt="Constra"> -->
+            <?php if (get_cookie('lang_is')=='in'): ?>
+              <h4 class="text-white">Bisnis Dengan Kami</h4>
+            <?php else: ?>
+              <h4 class="text-white">Bussines With Us</h4>
+            <?php endif ?>
+            <div class="d-flex flex-column">
+              <?php foreach ($this->M_Website->tampil_logo_bisnis_footer() as $row => $value): ?>
+                <a href="<?php echo $value['link'] ?>" target="_blank"><img class="icon-e-commerce" src="<?php echo base_url('main/assets/assets/img/logos/')?><?php echo $value['gambar'] ?>"></a>
+              <?php endforeach ?>
+              <div class="footer-divider mt-2"></div>
             </div>
-            <div class="col-lg-4 text-lg-right">
-                <a class="mr-3" href="#!">Privacy Policy</a>
-                <a href="#!">Terms of Use</a>
+          </div>
+          <div class="footer-bottom">
+            <?php if (get_cookie('lang_is')=='in'): ?>
+              <h4 class="text-white">Ikuti Kami</h4>
+            <?php else: ?>
+              <h4 class="text-white">Follow Us</h4>
+            <?php endif ?>
+            <div class="footer-social">
+              <ul>
+                <li><a href="https://web.facebook.com/cococreative.id" aria-label="Facebook" target="_blank"><i
+                  class="fab fa-facebook-f font-size-20px"></i></a></li>
+                  <li><a href="https://www.instagram.com/cococreative.id/" aria-label="Instagram" target="_blank"><i
+                    class="fab fa-instagram"></i></a></li>
+                    <li><a href="" aria-label="Github" target="_blank"><i class="fab fa-tiktok"></i></a></li>
+                  </ul>
+                </div><!-- Footer social end -->
+              </div>
+            </div><!-- Col end -->
+          </div><!-- Row end -->
+        </div><!-- Container end -->
+      </div><!-- Footer main end -->
+
+      <div class="copyright">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-12">
+              <div class="copyright-info text-center">
+                <span>Copyright &copy; <script>
+                  document.write(new Date().getFullYear())
+                </script> Developed by <a href="https://Cococreative-indonesia.com">IT Cococreative</a></span>
+              </div>
             </div>
-        </div>
-    </div>
-</footer>
-<!-- End Of Footer -->
-<div class="container-fluid">
-    <div class="scroll-icon">
-        <i class="fas fa-arrow-up" id="tombolScrollTop" onclick="scrolltotop()"></i>
-    </div>
-</div>
-<!-- Whatsapp Icon -->
-<div class="container-fluid">
-    <div class="whatsapp-icon">
-        <a href="https://wa.me/send?phone=6285290076364&text=Hallo%20Admin%20Cococreative%0ASaya%20ingin%20bertanya%20tentang%20produk%20anda%20."><i class="fab fa-whatsapp-square text-success"></i></a>
-    </div>
-</div>
-<div class="row">
-    <button class="btn btn-warning shadow-lg btn-lg pesan" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" id="pesan" data-idpembeli="<?php echo $this->session->userdata('id_pembeli'); ?>">
-        <i class="far fa-comment-alt" style="font-size: 30px;"></i>
-    </button>
-</div>
-<div class="collapse pesan" id="collapseExample">
-    <div class="row">
-        <div class="col-lg-3 col-sm-12 chat-main">
-            <div class="row">
-                <div class="col-md-12 chat-header rounded-top p-2">
-                    <div class="row">
-                        <div class="col-md-2 image">
-                            <img src="http://nicesnippets.com/demo/man01.png" class="rounded">
-                        </div>
-                        <div class="col-md-7 user-detail pt-2">
-                            <h6 class="pt-1">Admin</h6>
-                            <i class="fa fa-circle active ml-1" aria-hidden="true"></i>
-                        </div>
-                        <div class="col-md-3 options text-right pt-2">
-                            <a class="" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                                <i class="fa fa-ellipsis-h mr-1 hide-chat-box"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-12  chat-content p-0 bg-white border border-top-0" id="">
-                    <?php if ($this->session->userdata('no_hp')): ?>
-                        <div class="isi">
-                        </div>
-                    <?php else: ?>
-                     <ul class="pl-3 pr-3 pt-1 mb-1" id="scroll">
-                        <div class="card border-1 rounded-lg mt-5 shadow-lg">
-                            <div class="card-body">
-                                <form action="<?php echo base_url('pesan/login') ?>" method="POST">
-                                    <div class="form-group">
-                                        <label class="small mb-1 text-dark" for="email">No Hp / Whatsapp</label>
-                                        <input class="form-control py-4 isi_nomor" id="no_hp" type="text" placeholder="Masukan No Hape" name="nohp" autofocus>
-                                        <input type="text" name="url" value="<?php echo $this->uri->segment(1) ?>" hidden>
-                                        <small class="text-danger">
-                                            <?php echo form_error('email'); ?></small>
-                                        </div>
-                                        <div class="form-group d-flex align-items-center justify-content-around mt-4 mb-0">
-                                            <button class="btn btn-primary w-100 login" type="submit" name="submit">Mulai Mengirim Pesan</button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </ul>   
-                    <?php endif ?>
 
-                    <p class="text-center mb-2 sender font-italic">
-                    </p>
-                    <div class="msg-box p-2">
-                        <div class="row">
-                            <div class="col-md-9">
-                                <input type="text" name="pesan" autocomplete="off" class="form-control isipesan" placeholder="message ...">
-                            </div>
-                            <div class="col-md-3 pl-0">
-                                <button class="btn btn-success send">Send</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End Of Whatsapp Icon -->
-<!-- Contact form JS-->
-<script src="<?php echo base_url('assets/') ?>vendor/jquery/jquery.min.js"></script>
-<script src="<?php echo base_url('assets/') ?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- Core plugin JavaScript-->
-<script src="<?php echo base_url('assets/') ?>vendor/jquery-easing/jquery.easing.min.js"></script>
-<script src="<?php echo base_url('assets/')?>assets/mail/jqBootstrapValidation.js"></script>
-<script src="<?php echo base_url('assets/')?>assets/mail/contact_me.js"></script>
-<!-- Core theme JS-->
-<script src="<?php echo base_url('assets/')?>js/scripts.js"></script>
-<script>
-    $('.satu').on('click',function(){
-    </script>
-    <script>
+   <!--          <div class="col-md-12">
+              <div class="copyright-info text-center">
+                <span>Distributed by <a href="https://themewagon.com/">Themewagon</a></span>
+              </div>
+            </div> -->
+
+<!--             <div class="col-md-12">
+              <div class="footer-menu text-center">
+                <ul class="list-unstyled mb-0">
+                  <li><a href="about.html">About</a></li>
+                  <li><a href="team.html">Our people</a></li>
+                  <li><a href="faq.html">Faq</a></li>
+                  <li><a href="news-left-sidebar.html">Blog</a></li>
+                  <li><a href="pricing.html">Pricing</a></li>
+                </ul>
+              </div>
+            </div> -->
+          </div><!-- Row end -->
+
+          <div id="whatsapp" class="">
+            <a target="_blank" href="https://api.whatsapp.com/send?phone=6285290076364&text=Hallo%20Admin%20Cococreative%0ASaya%20ingin%20bertanya%20tentang%20produk%20anda%20." class="font-size-40px">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+
+          <div id="back-to-top" data-spy="affix" data-offset-top="10" class="back-to-top position-fixed">
+            <button class="btn btn-primary" title="Back to Top">
+              <i class="fa fa-angle-double-up"></i>
+            </button>
+          </div>
+
+        </div><!-- Container end -->
+      </div><!-- Copyright end -->
+    </footer><!-- Footer end -->
 
 
-        $(document).ready(function(){
-            load_data();
-            function load_data(pesan)
-            {
-                $(".isipesan").val('');
-                $.ajax({
-                    method:"POST",
-                    url:"<?php echo base_url('Pesan/tampil_pesan')?>",
-                    data: {pesan:pesan},
-                    success:function(hasil)
-                    {
-                        $('.isi').html(hasil);
-                    }
-                });
-            }
+  <!-- Javascript Files
+    ================================================== -->
 
-            $('.send').click(function(){
-                var pesan = $(".isipesan").val();
-                load_data(pesan);
-            });
-            $('.isipesan').keypress(function(e) {
-                if(e.which == 13) {
-                    var pesan = $(".isipesan").val();
-                    load_data(pesan);
-                }
-            });
-        });
+    <!-- initialize jQuery Library -->
+    <script src="<?= base_url('assets/') ?>plugins/jQuery/jquery.min.js"></script>
+    <!-- Bootstrap jQuery -->
+    <script src="<?= base_url('assets/') ?>plugins/bootstrap/bootstrap.min.js" defer></script>
+    <!-- Slick Carousel -->
+    <script src="<?= base_url('assets/') ?>plugins/slick/slick.min.js"></script>
+    <script src="<?= base_url('assets/') ?>plugins/slick/slick-animation.min.js"></script>
+    <!-- Color box -->
+    <script src="<?= base_url('assets/') ?>plugins/colorbox/jquery.colorbox.js"></script>
+    <!-- shuffle -->
+    <script src="<?= base_url('assets/') ?>plugins/shuffle/shuffle.min.js" defer></script>
 
 
-        $(function(){
-setInterval(isi, 1000);//fungsi yang dijalan setiap detik, 1000 = 1 detik
-});
-        function isi() {
-            $.ajax({
-                url: '<?php echo base_url('pesan/tampil_pesan')?>',
-                success: function(data) {
-                    $('.isi').html(data);
-                },
-            });
-        }
+    <!-- Google Map API Key-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU" defer></script>
+    <!-- Google Map Plugin-->
+    <script src="<?= base_url('assets/') ?>plugins/google-map/map.js" defer></script>
 
-    </script>
+    <!-- Template custom -->
+    <script src="<?= base_url('assets/') ?>js/script.js"></script>
+    <script src="<?= base_url('assets/') ?>js/slick-init.js"></script>
+
+  </div><!-- Body inner end -->
 </body>
+
 </html>

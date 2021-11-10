@@ -1,149 +1,151 @@
-<!-- Masthead -->
-<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-        <?php foreach ($carousel as $row => $value): ?>
-            <li data-target="#carouselExampleCaptions" data-slide-to="<?php echo $row ?>" class="<?php if ($row==0): ?>
-            <?php echo 'active' ?>
-            <?php endif ?>"></li>
-        <?php endforeach ?>
-    </ol>
-    <div class="carousel-inner">
-        <?php foreach ($carousel as $row => $value): ?>
-            <div class="carousel-item <?php if ($row==0): ?>
-            <?php echo 'active' ?>
-            <?php endif ?>">
-            <header class="masthead" style="background-image: url(<?php echo base_url('main/assets/assets/img/upload/website/') ?><?php echo $value['gambar'] ?>);">
-                <div class="container">
-                    <div class="masthead-subheading" ><?php echo $value['judul'] ?></div>
-                    <div class="masthead-heading text-uppercase" id="carouselTagline"><?php echo $value['tagline'] ?></div>
-                    <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Tell Me More</a>
-                </div>
-            </header>
-        </div>
-    <?php endforeach ?>
+      <div class="banner-section">
+      	<div class="banner-carousel banner-carousel-2 mb-0 pb-4">
+      		<?php foreach ($carousel as $row => $value): ?>
+      			<div class="banner-carousel-item" style="background-image:url(<?php echo base_url('main/assets/assets/img/upload/website/') ?><?= $value['gambar'] ?>)">
+      				<div class="container">
+      					<div class="box-slider-content">
+      						<div class="box-slider-text">
+      							<h2 class="box-slide-title"><?= $value['judul'] ?></h2>
+      							<h3 class="box-slide-sub-title"><?= $value['tagline'] ?></h3>
+      							<p>
+      								<a class="slider btn btn-primary btn-tell-me">Tell me more</a>
+      							</p>
+      						</div>
+      					</div>
+      				</div>
+      			</div>
+      		<?php endforeach ?>
+      	</div>
+      	<svg width="100%" height="207" viewBox="0 0 1440 207" fill="none" xmlns="http://www.w3.org/2000/svg">
+      		<g filter="url(#filter0_i_204:2)">
+      			<path d="M276 9.00002C118.5 -6.99998 65.1667 14.3334 0 25V206.5H1440V0C1354.83 42.3333 1284.5 120.282 963 132C743.5 140 433.5 25 276 9.00002Z" fill="white"/>
+      		</g>
+      		<defs>
+      			<filter id="filter0_i_204:2" x="0" y="0" width="1440" height="214.5" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      				<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      				<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      				<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      				<feOffset dy="8"/>
+      				<feGaussianBlur stdDeviation="7"/>
+      				<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+      				<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+      				<feBlend mode="normal" in2="shape" result="effect1_innerShadow_204:2"/>
+      			</filter>
+      		</defs>
+      	</svg>
+      </div>
+      <section id="ts-features" class="ts-features pb-2">
+      	<div class="container">
+            <?php if (get_cookie('lang_is')=='in'): ?>
+                <p class="font-weight-bold text-center custom-text-black font-size-20px">Fitur</p>
+            <?php else: ?>
+                <p class="font-weight-bold text-center custom-text-black font-size-20px">Our Key Feature</p>
+            <?php endif ?>
+            <div class="row d-flex justify-content-center">
+             <?php foreach ($trust as $row => $value): ?>
+              <div class="col-lg-3 col-md-6 mb-5 mx-4 custom-box-shadow border-radius-16px pt-3 pb-3">
+               <div class="ts-service-box">
+                <div class="ts-service-image-wrapper custom-ts-service-image-wrapper text-center">
+                 <div class="ts-service-box-img custom-ts-service-box-img text-center">
+                  <img loading="lazy" class="icon-png" src="<?= base_url('assets/') ?>icon/<?= $value['icon'] ?>" alt="service-icon" />
+              </div>
+              <h4><?= $value['judul'] ?></h4>
+          </div>
+          <div class="d-flex">    
+             <div class="ts-service-info">
+              <p><?= $value['isi'] ?></p>
+          </div>
+      </div>
+  </div><!-- Service1 end -->
+</div><!-- Col 1 end -->
+<?php endforeach ?>
+</div><!-- Content row end -->
+</div><!-- Container end -->
+</section><!-- Feature are end -->
+
+<section id="product" class="product-area">
+   <div class="container">
+    <div class="header-section d-flex justify-content-center">
+     <img src="icon/line.svg" alt="">
+     <?php if (get_cookie('lang_is')=='in'): ?>
+         <p class="font-weight-bold text-center custom-text-black mx-4 font-size-20px">Produk Kami</p>
+     <?php else: ?>
+        <p class="font-weight-bold text-center custom-text-black mx-4 font-size-20px">Our Product</p>
+    <?php endif ?>
+    <img src="icon/line.svg" alt="">
 </div>
-<a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-</a>
-<a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-</a>
+<div class="row d-flex justify-content-center custom-product-slick">
+ <?php foreach ($jenis_produk as $row => $value): ?>
+  <div class="col-lg-3 col-md-12 col-sm-12 mb-5 mx-4 pt-3 pb-3">
+   <div class="ts-service-box">
+    <div class="ts-service-image-wrapper custom-ts-service-image-wrapper text-center">
+     <div class="ts-service-box-img custom-ts-service-box-img text-center">
+      <img class="img-fluid border-radius-16px custom-product-shadow" loading="lazy" src="<?php echo base_url('main/assets/assets/img/upload/produk/') ?><?php echo $value['gambar'] ?>" alt="service-icon" />
+  </div>
+  <h4><?= $value['nama_jenis_produk'] ?></h4>
 </div>
-<!-- Trust -->
-<section class="page-section" id="">
+<div class="d-flex flex-column">    
+ <div class="ts-service-info custom-text-black">
+  <p><?= $value['keterangan'] ?></p>
+</div>
+<div class="button-product d-flex justify-content-center">
+  <?php if (get_cookie('lang_is')=='in'): ?>
+    <a class="badge btn-success">Selengkapnya</a>
+<?php else: ?>
+  <a class="badge btn-success">View More</a>
+<?php endif ?>
+</div>
+</div>
+</div><!-- Service1 end -->
+</div><!-- Col 1 end -->
+<?php endforeach ?>
+</div><!-- Content row end -->
+<!--/ Content row end -->
+</div>
+<!--/ Container end -->
+</section><!-- Facts end -->
+
+<section id="about-us" class="about-us-area">
+   <?php foreach ($about as $row => $value): ?>
     <div class="container">
-        <div class="row text-center">
-            <?php foreach ($trust as $row => $value): ?>
-                <div class="col-md-4">
-                    <span class="fa-stack fa-3x trust-icon">
-                        <i class="fas fa-circle fa-stack-2x circle-icon"></i>
-                        <i class="<?php echo $value['icon'] ?>"></i>
-                    </span>
-                    <h4 class="my-3"><?php echo $value['judul'] ?></h4>
-                    <p class="text-muted text-justify"><?php echo $value['isi'] ?></p>
-                </div>
-            <?php endforeach ?>
-        </div>
-    </div>
-</section>
-<!-- End Of Trust -->
-<!-- My Product -->
-<section class="page-section">
-    <div class="container-fluid">
-        <?php foreach ($desproduk as $row => $value): ?>
-            <div class="row align-items-center">
-                <div class="col-lg-6 order-lg-2">
-                    <div class="p-lg-2">
-                        <img class="img-fluid" src="<?php echo base_url('main/assets/assets/img/upload/website/') ?><?php echo $value['gambar'] ?>" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-6 order-lg-1">
-                    <div class="p-lg-2">
-                        <h2 class="font-weight-bold display-4 text-capitalize"><?php echo $value['judul'] ?></h2>
-                        <p><?php echo $value['isi'] ?></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    <?php endforeach ?>
+     <div class="header-section d-flex justify-content-center">
+      <img src="icon/line.svg" alt="">
+      <?php if (get_cookie('lang_is')=='in'): ?>
+          <p class="font-weight-bold text-center custom-text-black mx-4 font-size-20px">Tentang Kami</p>
+      <?php else: ?>
+        <p class="font-weight-bold text-center custom-text-black mx-4 font-size-20px">About Us</p>
+    <?php endif ?>
+    <img src="icon/line.svg" alt="">
 </div>
-</section>
-<section class="page-section">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-sm-12">
-        <h1 class="text-center">OUR VIDEO</h1>
-    </div>
-    <div class="col-sm-12">
-        <div class="mx-auto text-center m-5">
-          <object class="col-lg-7 col-sm-12" height="430" data="https://www.youtube.com/v/<?php echo $this->M_Website->tampil_link()['link'] ?>" type="application/x-shockwave-flash">
-            <param name="src" value="https://www.youtube.com/v/<?php echo $this->M_Website->tampil_link()['link'] ?>" />
-        </object>
-    </div>
+<div class="row d-flex justify-content-center align-items-center custom-bg-primary p-5 border-radius-16px">
+  <div class="col-lg-6 col-md-12 pt-3 pb-3">
+   <img class="img-fluid border-radius-16px custom-product-shadow" loading="lazy" src="<?php echo base_url('main/assets/assets/img/upload/website/') ?><?php echo $value['gambar'] ?>" alt="service-icon" />
 </div>
+<div class="col-lg-6 col-md-12 pt-3 pb-3 text-justify">
+   <?= $value['isi'] ?>
 </div>
-</div>
-</section>
 
-
-<!-- End Of My Product -->
-<section class="projects-section testimonial-bg" id="projects">
-    <div class="container-fluid">
-        <div class="container-fluid">
-            <div class="row justify-content-center no-gutters mt-2">
-                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                        <?php foreach ($testimonial as $row => $value): ?>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="<?php echo $row ?>" class="<?php if ($row==0): ?>
-                            <?php echo 'active' ?>
-                            <?php endif ?>"></li>
-                        <?php endforeach ?>
-                    </ol>
-                    <div class="carousel-inner">
-                        <?php foreach ($testimonial as $row => $value): ?>
-                            <div class="carousel-item <?php if ($row==0): ?>
-                            <?php echo 'active' ?>
-                            <?php endif ?>">
-                            <div class="row justify-content-center no-gutters m-5 p-5">
-                                <div class="col-lg-7">
-                                    <div class="bg-white text-center h-100 project">
-                                        <div class="d-flex h-100">
-                                            <div class="project-text w-100 my-auto text-center">
-                                                <p class="mb-0 text-dark-50 text-center"><span class="display-4 font-weight-bold"><img class="img-fluid d-block w-100" src="<?php echo base_url('main/assets/assets/img/upload/website/') ?><?php echo $value['gambar'] ?>"></span></p>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                </div>
-                                <div class="col-lg-5 order-lg-first">
-                                    <div class="bg-white text-center h-100 project">
-                                        <div class="d-flex h-100">
-                                            <div class="project-text w-100 my-auto text-center">
-                                                <h4 class="text-dark">TESTIMONIAL</h4>
-                                                <hr class="w-100">
-                                                <p class="mb-0 text-dark-50 text-center"><span class="display-4 font-weight-bold">"</span><?php echo $value['isi'] ?></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    <?php endforeach ?>
-                </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon bg-dark" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon bg-dark" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </div>
-            <!--                </div> -->
-        </div>
-    </div>
+</div><!-- Content row end -->
+<!--/ Content row end -->
 </div>
-</section>
+<!--/ Container end -->
+<?php endforeach ?>
+</section><!-- Facts end -->
+
+      <!-- <section id="galery" class="galery-area">
+      	<div class="container">
+      		<div class="header-section d-flex justify-content-center">
+      			<img src="icon/line.svg" alt="">
+      			<p class="font-weight-bold text-center custom-text-black mx-4 font-size-20px">Galery</p>
+      			<img src="icon/line.svg" alt="">
+      		</div>
+      		<div class="row d-flex justify-content-center border-radius-16px banner-carousel banner-carousel-2 px-5">
+      			<div class="col-lg-12 col-md-12 pt-3 pb-3 d-flex justify-content-center">
+      				<img class="img-fluid border-radius-16px custom-product-shadow" loading="lazy" src="images/projects/project1.jpg" alt="service-icon" />
+      			</div>
+      			<div class="col-lg-12 col-md-12 pt-3 pb-3 d-flex justify-content-center">
+      				<img class="img-fluid border-radius-16px custom-product-shadow" loading="lazy" src="images/banner/banner1.png" alt="service-icon" />
+      			</div>
+      		</div>
+      	</div>
+      </section> -->
