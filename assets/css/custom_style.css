@@ -1,0 +1,96 @@
+.logo h4{
+	color:#ffb600 !important;
+}
+
+.custom_logo img{
+	height: 68px !important;
+}
+
+.btn-tell-me{
+	border-radius: 15px !important;
+}
+
+.banner-section{
+	position: relative;
+}
+
+.custom-ts-service-image-wrapper{
+	margin-bottom: 0px !important;
+}
+
+.custom-ts-service-box-img{
+	margin-bottom: 10px;
+}
+
+.border-radius-16px{
+	border-radius: 16px;
+}
+
+.custom-box-shadow{
+	box-shadow: 0px 8px 16px 0px #00000040;
+}
+
+.custom-product-shadow{
+	box-shadow: 0px 8px 16px 0px #000;
+}
+
+.custom-bg-primary{
+	background: #FFBD59;
+}
+
+.custom-text-black{
+	color: #000;
+}
+
+.product-area{
+	background: #F0F0F0;
+}
+
+.banner-section svg{
+	position: absolute;
+	bottom: 0px;
+}
+
+.icon-png{
+	width: 48px;
+}
+
+.font-size-20px{
+	font-size: 20px;
+}
+
+.font-size-40px{
+	font-size: 40px;
+}
+
+.icon-e-commerce{
+	width: 5.5rem;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 5px;
+}
+
+#whatsapp{
+	left: 40px;
+	bottom: 20px;
+	position: fixed;
+	color: #25D366;
+}
+
+#whatsapp:hover{
+	color: green;
+}
+
+.footer-divider{
+	width: 20%;
+	height: 2px;
+	background: white;
+	background: #FFBD59;
+}
+
+@media (max-width: 575px) {
+  .custom_logo img {
+    display: none !important;
+  }
+}
