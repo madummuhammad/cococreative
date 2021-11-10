@@ -36,66 +36,70 @@
       </div>
       <section id="ts-features" class="ts-features pb-2">
       	<div class="container">
-            <?php if (get_cookie('lang_is')=='in'): ?>
-                <p class="font-weight-bold text-center custom-text-black font-size-20px">Fitur</p>
+            <div class="header-section d-flex justify-content-center">
+               <img src="<?= base_url('assets/') ?>icon/line.svg">
+               <?php if (get_cookie('lang_is')=='in'): ?>
+                <p class="font-weight-bold text-center custom-text-black font-size-20px mx-4">Fitur</p>
             <?php else: ?>
-                <p class="font-weight-bold text-center custom-text-black font-size-20px">Our Key Feature</p>
+                <p class="font-weight-bold text-center custom-text-black font-size-20px mx-4">Our Key Feature</p>
             <?php endif ?>
+            <img src="<?= base_url('assets/') ?>icon/line.svg">
+        </div>
             <div class="row d-flex justify-content-center">
-             <?php foreach ($trust as $row => $value): ?>
-              <div class="col-lg-3 col-md-6 mb-5 mx-4 custom-box-shadow border-radius-16px pt-3 pb-3">
-               <div class="ts-service-box">
-                <div class="ts-service-image-wrapper custom-ts-service-image-wrapper text-center">
-                 <div class="ts-service-box-img custom-ts-service-box-img text-center">
-                  <img loading="lazy" class="icon-png" src="<?= base_url('assets/') ?>icon/<?= $value['icon'] ?>" alt="service-icon" />
-              </div>
-              <h4><?= $value['judul'] ?></h4>
-          </div>
-          <div class="d-flex">    
-             <div class="ts-service-info">
-              <p><?= $value['isi'] ?></p>
-          </div>
-      </div>
-  </div><!-- Service1 end -->
-</div><!-- Col 1 end -->
-<?php endforeach ?>
-</div><!-- Content row end -->
+               <?php foreach ($trust as $row => $value): ?>
+                  <div class="col-lg-3 col-md-6 mb-5 mx-4 custom-box-shadow border-radius-16px pt-3 pb-3">
+                     <div class="ts-service-box">
+                        <div class="ts-service-image-wrapper custom-ts-service-image-wrapper text-center">
+                           <div class="ts-service-box-img custom-ts-service-box-img text-center">
+                              <img loading="lazy" class="icon-png" src="<?= base_url('assets/') ?>icon/<?= $value['icon'] ?>" alt="service-icon" />
+                          </div>
+                          <h4><?= $value['judul'] ?></h4>
+                      </div>
+                      <div class="d-flex">    
+                       <div class="ts-service-info">
+                          <p><?= $value['isi'] ?></p>
+                      </div>
+                  </div>
+              </div><!-- Service1 end -->
+          </div><!-- Col 1 end -->
+      <?php endforeach ?>
+  </div><!-- Content row end -->
 </div><!-- Container end -->
 </section><!-- Feature are end -->
 
 <section id="product" class="product-area">
-   <div class="container">
+ <div class="container">
     <div class="header-section d-flex justify-content-center">
-     <img src="icon/line.svg" alt="">
-     <?php if (get_cookie('lang_is')=='in'): ?>
-         <p class="font-weight-bold text-center custom-text-black mx-4 font-size-20px">Produk Kami</p>
-     <?php else: ?>
+       <img src="<?= base_url('assets/') ?>icon/line.svg">
+       <?php if (get_cookie('lang_is')=='in'): ?>
+           <p class="font-weight-bold text-center custom-text-black mx-4 font-size-20px">Produk Kami</p>
+       <?php else: ?>
         <p class="font-weight-bold text-center custom-text-black mx-4 font-size-20px">Our Product</p>
     <?php endif ?>
-    <img src="icon/line.svg" alt="">
+    <img src="<?= base_url('assets/') ?>icon/line.svg">
 </div>
 <div class="row d-flex justify-content-center custom-product-slick">
- <?php foreach ($jenis_produk as $row => $value): ?>
-  <div class="col-lg-3 col-md-12 col-sm-12 mb-5 mx-4 pt-3 pb-3">
-   <div class="ts-service-box">
-    <div class="ts-service-image-wrapper custom-ts-service-image-wrapper text-center">
-     <div class="ts-service-box-img custom-ts-service-box-img text-center">
-      <img class="img-fluid border-radius-16px custom-product-shadow" loading="lazy" src="<?php echo base_url('main/assets/assets/img/upload/produk/') ?><?php echo $value['gambar'] ?>" alt="service-icon" />
+   <?php foreach ($jenis_produk as $row => $value): ?>
+      <div class="col-lg-3 col-md-12 col-sm-12 mb-5 mx-4 pt-3 pb-3">
+         <div class="ts-service-box">
+            <div class="ts-service-image-wrapper custom-ts-service-image-wrapper text-center">
+               <div class="ts-service-box-img custom-ts-service-box-img text-center">
+                  <img class="img-fluid border-radius-16px custom-product-shadow" loading="lazy" src="<?php echo base_url('main/assets/assets/img/upload/produk/') ?><?php echo $value['gambar'] ?>" alt="service-icon" />
+              </div>
+              <h4><?= $value['nama_jenis_produk'] ?></h4>
+          </div>
+          <div class="d-flex flex-column">    
+           <div class="ts-service-info custom-text-black">
+              <p><?= $value['keterangan'] ?></p>
+          </div>
+          <div class="button-product d-flex justify-content-center">
+              <?php if (get_cookie('lang_is')=='in'): ?>
+                <a class="badge btn-success">Selengkapnya</a>
+            <?php else: ?>
+              <a class="badge btn-success">View More</a>
+          <?php endif ?>
+      </div>
   </div>
-  <h4><?= $value['nama_jenis_produk'] ?></h4>
-</div>
-<div class="d-flex flex-column">    
- <div class="ts-service-info custom-text-black">
-  <p><?= $value['keterangan'] ?></p>
-</div>
-<div class="button-product d-flex justify-content-center">
-  <?php if (get_cookie('lang_is')=='in'): ?>
-    <a class="badge btn-success">Selengkapnya</a>
-<?php else: ?>
-  <a class="badge btn-success">View More</a>
-<?php endif ?>
-</div>
-</div>
 </div><!-- Service1 end -->
 </div><!-- Col 1 end -->
 <?php endforeach ?>
@@ -106,27 +110,27 @@
 </section><!-- Facts end -->
 
 <section id="about-us" class="about-us-area">
-   <?php foreach ($about as $row => $value): ?>
+ <?php foreach ($about as $row => $value): ?>
     <div class="container">
-     <div class="header-section d-flex justify-content-center">
-      <img src="icon/line.svg" alt="">
-      <?php if (get_cookie('lang_is')=='in'): ?>
-          <p class="font-weight-bold text-center custom-text-black mx-4 font-size-20px">Tentang Kami</p>
-      <?php else: ?>
-        <p class="font-weight-bold text-center custom-text-black mx-4 font-size-20px">About Us</p>
-    <?php endif ?>
-    <img src="icon/line.svg" alt="">
-</div>
-<div class="row d-flex justify-content-center align-items-center custom-bg-primary p-5 border-radius-16px">
-  <div class="col-lg-6 col-md-12 pt-3 pb-3">
-   <img class="img-fluid border-radius-16px custom-product-shadow" loading="lazy" src="<?php echo base_url('main/assets/assets/img/upload/website/') ?><?php echo $value['gambar'] ?>" alt="service-icon" />
-</div>
-<div class="col-lg-6 col-md-12 pt-3 pb-3 text-justify">
-   <?= $value['isi'] ?>
-</div>
+       <div class="header-section d-flex justify-content-center">
+          <img src="<?= base_url('assets/') ?>icon/line.svg" alt="">
+          <?php if (get_cookie('lang_is')=='in'): ?>
+              <p class="font-weight-bold text-center custom-text-black mx-4 font-size-20px">Tentang Kami</p>
+          <?php else: ?>
+            <p class="font-weight-bold text-center custom-text-black mx-4 font-size-20px">About Us</p>
+        <?php endif ?>
+        <img src="<?= base_url('assets/') ?>icon/line.svg" alt="">
+    </div>
+    <div class="row d-flex justify-content-center align-items-center custom-bg-primary p-5 border-radius-16px">
+      <div class="col-lg-6 col-md-12 pt-3 pb-3">
+         <img class="img-fluid border-radius-16px custom-product-shadow" loading="lazy" src="<?php echo base_url('main/assets/assets/img/upload/website/') ?><?php echo $value['gambar'] ?>" alt="service-icon" />
+     </div>
+     <div class="col-lg-6 col-md-12 pt-3 pb-3 text-justify">
+         <?= $value['isi'] ?>
+     </div>
 
-</div><!-- Content row end -->
-<!--/ Content row end -->
+ </div><!-- Content row end -->
+ <!--/ Content row end -->
 </div>
 <!--/ Container end -->
 <?php endforeach ?>
