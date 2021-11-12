@@ -32,7 +32,7 @@
                         <li class="nav-item"><a class="nav-link btn-navbar" data-target="#product">Produk</a></li>
                         <li class="nav-item"><a class="nav-link btn-navbar" data-target="#about-us">Tentang Kami</a></li>
                         <li class="nav-item"><a class="nav-link btn-navbar" data-target="#galery">Galeri</a></li>
-                        <li class="nav-item"><a href="" class="nav-link btn-navbar">Tim</a></li>
+                        <li class="nav-item"><a href="<?= base_url('teams') ?>" class="nav-link btn-navbar">Tim</a></li>
                         <li class="nav-item"><a class="nav-link btn-navbar" data-target="#footer">Kontak</a></li>
                         <li class="nav-item dropdown">
                           <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><img src="icon/translete_icon.svg" alt="">ID <i class="fa fa-angle-down"></i></a>
@@ -49,7 +49,7 @@
                         <li class="nav-item"><a class="nav-link btn-navbar" data-target="#product">Product</a></li>
                         <li class="nav-item"><a class="nav-link btn-navbar" data-target="#about-us">About</a></li>
                         <li class="nav-item"><a class="nav-link btn-navbar" data-target="#galery">Galery</a></li>
-                        <li class="nav-item"><a href="" class="nav-link btn-navbar">Teams</a></li>
+                        <li class="nav-item"><a href="<?= base_url('teams') ?>" class="nav-link btn-navbar">Teams</a></li>
                         <li class="nav-item"><a class="nav-link btn-navbar" data-target="#footer">Contact</a></li>
                         <li class="nav-item dropdown">
                           <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><img src="icon/translete_icon.svg" alt="">ENG <i class="fa fa-angle-down"></i></a>
