@@ -48,6 +48,12 @@
 		</div>
 	</div>
 </li>
+<li class="nav-item">
+		<a class="nav-link collapsed" href="<?php echo base_url('tim') ?>">
+			<i class="fas fa-users"></i>
+			<span>Tim</span>
+		</a>
+	</li>
 <!-- Divider -->
 <hr class="sidebar-divider">
 <!-- Heading -->
@@ -111,14 +117,14 @@
 	<span>Data User</span>
 </a>
 </li>
-<li class="nav-item <?php if ($this->uri->segment('1')=='pesan'): ?>
+<!-- <li class="nav-item <?php if ($this->uri->segment('1')=='pesan'): ?>
 <?php echo 'active' ?>
 <?php endif ?>">
 <a class="nav-link collapsed " href="<?php echo base_url('pesan') ?>">
 	<i class="fas fa-envelope fa-fw"></i>
 	<span>Pesan</span>
 </a>
-</li>
+</li> -->
 <!-- Divider -->
 <hr class="sidebar-divider d-none d-md-block">
 <!-- Nav Item - Pages Collapse Menu -->
